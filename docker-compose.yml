@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  polychrom_devx:
+    image: nginx:stable-alpine
+    build: .
+    container_name: spaceframe_io
+    ports:
+      - 8017
+    volumes:
+      # - ./src:/usr/share/nginx/html
+      - ./dist/spaceframe.io:/usr/share/nginx/html
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.spaceframe_io.entrypoints=websecure"
+      - "traefik.http.routers.spaceframe_io.rule=Host(`spaceframe.io`, `www.spaceframe.io`)"
+      - "traefik.http.routers.spaceframe_io.tls.certresolver=myresolver"
+      - "traefik.port=8018"
+
+    networks:
+      - traefik_network
+networks:
+  traefik_network:
+    external: true
