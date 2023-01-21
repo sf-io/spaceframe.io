@@ -18,6 +18,10 @@ services:
       - "traefik.http.routers.spaceframe_io.tls.certresolver=myresolver"
       - "traefik.port=8018"
 
+        # Enable gzip compression
+      - "traefik.http.routers.spaceframe_io.middlewares=test-compress"
+      - "traefik.http.middlewares.test-compress.compress=true"
+
     networks:
       - traefik_network
 networks:
