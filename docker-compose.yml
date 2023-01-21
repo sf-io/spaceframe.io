@@ -21,6 +21,9 @@ services:
       - "traefik.http.routers.spaceframe_io.middlewares=test-compress"
       - "traefik.http.middlewares.test-compress.compress=true"
 
+      # Cache Ttl 1 month
+      - "traefik.http.middlewares.test-http-cache.plugin.httpCache.maxTtl=2628000"
+
     networks:
       - traefik_network
 networks:
