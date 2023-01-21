@@ -8,7 +8,6 @@ services:
     ports:
       - 8017
     volumes:
-      # - ./src:/usr/share/nginx/html
       - ./dist/spaceframe.io:/usr/share/nginx/html
 
     labels:
