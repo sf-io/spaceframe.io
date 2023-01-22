@@ -21,8 +21,15 @@ services:
       - "traefik.http.routers.spaceframe_io.middlewares=test-compress"
       - "traefik.http.middlewares.test-compress.compress=true"
 
+      - "traefik.http.middlewares.testheader.headers.accesscontrolmaxage=2628000"
+
+
+      #- "traefik.http.middlewares.testHeader.headers.customrequestheaders.Cache-Control=no-cache"
+      #- "traefik.http.middlewares.testHeader.headers.customrequestheaders.Pragma=no-cache"
+
       # Cache Ttl 1 month
       - "traefik.http.middlewares.test-http-cache.plugin.httpCache.maxTtl=2628000"
+      -
 
     networks:
       - traefik_network
