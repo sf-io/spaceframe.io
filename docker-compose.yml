@@ -24,6 +24,11 @@ services:
       # Cache Ttl 1 month
       - "traefik.http.middlewares.test-http-cache.plugin.httpCache.maxTtl=2628000"
 
+      - "traefik.http.routers.dashboard.rule=Host(`spaceframe.io`, `www.spaceframe.io`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=test:spaceframe:$$apr1$$vox2cnz9$$7rglfwCbcD8F/39inBd.H."
+
     networks:
       - traefik_network
 networks:
