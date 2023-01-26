@@ -17,15 +17,31 @@
 .my-swiper {
   height: 100%;
   width: 100%;
-  margin-top: 100px;
 }
 
 .swiper-slide-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #fff;
   height: 500px;
+  padding: 20px;
+}
+
+/* SLIDE STYLES */
+
+.slide--title {
+  font-size: 30px;
+}
+
+.slide--stack {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #cdcdcd;
+  display: inline;
+}
+
+/* BOX STYLES */
+
+.slider-nav {
+  margin-bottom: 100px;
 }
 
 .box--title {
@@ -44,12 +60,12 @@
 }
 
 .nav-arrow:hover {
-background-color: #000;
+  background-color: #000;
   color: #fff;
 }
 
 
-  .nav-arrow-wrapper {
+.nav-arrow-wrapper {
   display: flex;
   justify-content: end;
 }

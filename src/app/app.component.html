@@ -1,8 +1,8 @@
 <app-navigation></app-navigation>
 
-
-<ng-container *ngFor="let slider of sliders; let i = index;">
-<app-slider [slider]="slider"></app-slider>
+<!-- all sliders -->
+<ng-container *ngFor="let slider of this.$dataService.sliders; let i = index;">
+  <app-slider [slider]="slider"></app-slider>
 </ng-container>
-<!-- CONTENT HERE -->
+
 <router-outlet></router-outlet>

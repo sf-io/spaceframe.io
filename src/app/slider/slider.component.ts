@@ -1,7 +1,7 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
+import {ChangeDetectorRef, Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import SwiperCore, {Keyboard, Pagination, Navigation, Virtual, SwiperOptions} from 'swiper';
+import Swiper from "swiper";
+
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
 @Component({
@@ -12,46 +12,55 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 })
 
 export class SliderComponent implements OnInit {
+
+  swiperControl: any;
+  @ViewChild('myswiper') myswiper: Swiper | undefined;
+
   @Input() slider: any;
 
   currentSlide = 0;
   title = 'default';
 
   config: SwiperOptions = {
-    slidesPerView: 4.5,
-    initialSlide: 0,
+    slidesPerView: 1.5,
     spaceBetween: 1,
-    pagination: { clickable: true },
-    scrollbar: { draggable: true },
-    keyboard: { enabled: true },
+    scrollbar: {draggable: true},
+    keyboard: {enabled: true},
     virtual: true,
-    navigation: {
-      nextEl: ".btn-next",
-      prevEl: ".btn-prev",
-    },
   };
+
   onSwiper(swiper: any) {
-    console.log(swiper);
   }
+
   onSlideChange(swiper: any) {
-    const activeIndex = swiper[0].activeIndex;
-    console.log('slide change', activeIndex);
-    this.currentSlide = swiper[0].activeIndex;
+    const activeIndex = swiper[0]?.activeIndex || 0;
+    this.currentSlide = activeIndex;
     this.title = this.slider[activeIndex].title;
   }
 
-  slides$ = new BehaviorSubject<string[]>(['']);
+  slideNext(): void {
+    this.swiperControl.slideNext();
+  }
 
-  constructor() {}
+  slidePrev(): void {
+    this.swiperControl.slidePrev();
+  }
+
+
+  constructor(
+    private $cdr: ChangeDetectorRef) {
+  }
 
   ngOnInit(): void {
-    this.slides$.next(
-      Array.from({ length: 20 }).map((el, index) => `Slide ${index + 1}`)
-    );
   }
 
   ngAfterViewInit(): void {
     console.log('data', this.slider)
-}
+
+    this.swiperControl = this.myswiper || undefined;
+    this.swiperControl = this.swiperControl.elementRef.nativeElement.swiper;
+
+    console.log('VIRTUAL', this.swiperControl);
+  }
 
 }

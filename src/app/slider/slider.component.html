@@ -1,23 +1,40 @@
 <swiper class="my-swiper"
-  [config]="config"
-  (swiper)="onSwiper($event)"
-  (slideChange)="onSlideChange($event)">
+        #myswiper
+        [config]="config"
+        (swiper)="onSwiper($event)"
+        (slideChange)="onSlideChange($event)">
 
 
-  <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
+  <ng-template swiperSlide *ngFor="let slide of slider; index as i">
     <div class="swiper-slide-container">
-      {{ slide }}
+      <div class="slide--title">{{ slide.title }}</div>
+
+      <!-- SLIDE STACK -->
+      <ng-container *ngIf="slide.stack">
+        <li class="slide--stack" *ngFor="let technology of slide.stack; index as i;">{{ technology }}</li>
+      </ng-container>
+
+      <!-- SLIDE INFO -->
+      <ng-container *ngIf="slide.info">
+        <div class="slide--title">{{ slide.info }}</div>
+      </ng-container>
+
+      <!-- SLIDE IMAGE -->
+      <ng-container *ngIf="slide.image">
+        <img [src]="slide.image" width="100%">
+      </ng-container>
     </div>
   </ng-template>
 </swiper>
 <div class="slider-nav">
   <div class="nav-arrow-wrapper">
-    <span class="nav-arrow max-space">Titel</span>
+    <span class="nav-arrow box--title">{{ this.title }}</span>
     <span class="nav-arrow">Stack</span>
 
-    <span class="nav-arrow">Slide {{ this.currentSlide < 9 ? '0' + (this.currentSlide + 1) : this.currentSlide + 1 }}</span>
-    <span class="btn-prev nav-arrow"><</span>
-  <span class="btn-next nav-arrow">></span>
+    <span
+      class="nav-arrow">Slide {{ this.currentSlide < 9 ? '0' + (this.currentSlide + 1) : this.currentSlide + 1 }}</span>
+    <span class="btn-prev nav-arrow" (click)="this.slidePrev()"><</span>
+    <span class="btn-next nav-arrow" (click)="this.slideNext()">></span>
   </div>
 </div>
 
