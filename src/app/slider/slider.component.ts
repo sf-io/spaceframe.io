@@ -15,6 +15,7 @@ export class SliderComponent implements OnInit {
   @Input() slider: any;
 
   currentSlide = 0;
+  title = 'default';
 
   config: SwiperOptions = {
     slidesPerView: 4.5,
@@ -33,8 +34,10 @@ export class SliderComponent implements OnInit {
     console.log(swiper);
   }
   onSlideChange(swiper: any) {
-    console.log('slide change', swiper[0].activeIndex);
+    const activeIndex = swiper[0].activeIndex;
+    console.log('slide change', activeIndex);
     this.currentSlide = swiper[0].activeIndex;
+    this.title = this.slider[activeIndex].title;
   }
 
   slides$ = new BehaviorSubject<string[]>(['']);

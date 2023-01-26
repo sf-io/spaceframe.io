@@ -10,15 +10,21 @@ export class AppComponent {
 
   // public data = 'testdata';
 
-  public sliders = [[
-    {name: "abc", section: 'A', phoneNumber: '123', studentID: 101},
-    {name: "xyz", section: 'B', phoneNumber: '456', studentID: 102},
-    {name: "mno", section: 'C', phoneNumber: '789', studentID: 103},
-  ],[
-    {name: "abc", section: 'A', phoneNumber: '123', studentID: 101},
-    {name: "xyz", section: 'B', phoneNumber: '456', studentID: 102},
-    {name: "mno", section: 'C', phoneNumber: '789', studentID: 103},
-  ],
+  public sliders = [
+    [
+      {title: "stack", stack: ['angular', 'typescript', 'docker']},
+      {title: "image", image: 'myurl'},
+      {title: "info", info: 'hier steht die beschreibung zu dem projekt'},
+      {title: "ccc", section: 'C', phoneNumber: '789', studentID: 103},
+      {title: "dd", section: 'C', phoneNumber: '789', studentID: 103},
+      {title: "eee", section: 'C', phoneNumber: '789', studentID: 103},
+
+    ],
+    [
+      {title: "abc2", section: 'A', phoneNumber: '123', studentID: 101},
+      {title: "xyz2", section: 'B', phoneNumber: '456', studentID: 102},
+      {title: "mno2", section: 'C', phoneNumber: '789', studentID: 103},
+    ],
 
   ];
 
