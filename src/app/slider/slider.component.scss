@@ -1,0 +1,54 @@
+/**
+ * Swiper 8.4.6
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2023 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: January 17, 2023
+ */
+
+@import '~swiper/swiper.min.css';
+@import '~swiper/modules/navigation/navigation.min.css';
+@import '~swiper/modules/pagination/pagination.min.css';
+
+.my-swiper {
+  height: 100%;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.swiper-slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  height: 500px;
+}
+
+.max-space {
+  flex-grow: 1;
+}
+
+.nav-arrow {
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 50px;
+  background: #fff;
+  padding: 20px;
+  margin: 1px 1px 1px 0;
+}
+
+.nav-arrow:hover {
+background-color: #000;
+  color: #fff;
+}
+
+
+  .nav-arrow-wrapper {
+  display: flex;
+  justify-content: end;
+}

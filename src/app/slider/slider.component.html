@@ -1,0 +1,23 @@
+<swiper class="my-swiper"
+  [config]="config"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange($event)">
+
+
+  <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
+    <div class="swiper-slide-container">
+      {{ slide }}
+    </div>
+  </ng-template>
+</swiper>
+<div class="slider-nav">
+  <div class="nav-arrow-wrapper">
+    <span class="nav-arrow max-space">Titel</span>
+    <span class="nav-arrow">Stack</span>
+
+    <span class="nav-arrow">Slide {{ this.currentSlide < 9 ? '0' + (this.currentSlide + 1) : this.currentSlide + 1 }}</span>
+    <span class="btn-prev nav-arrow"><</span>
+  <span class="btn-next nav-arrow">></span>
+  </div>
+</div>
+
