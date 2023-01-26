@@ -1,7 +1,16 @@
 html,
 body {
   margin: 0;
-  background-color: #000000;
-  color: #FFFFFF;
+  color: #000;
   font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #cdcdcd;
 }
+
+// swiper bundle styles
+
+// swiper core styles
+//import '~swiper/css'
+
+// modules styles
+//import '~swiper/css/navigation'
+//import '~swiper/css/pagination'
