@@ -1,7 +1,6 @@
 <swiper class="my-swiper"
         #myswiper
         [config]="config"
-        (swiper)="onSwiper($event)"
         (slideChange)="onSlideChange($event)">
 
 
@@ -29,10 +28,9 @@
 <div class="slider-nav">
   <div class="nav-arrow-wrapper">
     <span class="nav-arrow box--title">{{ this.title }}</span>
-    <span class="nav-arrow">Stack</span>
-
     <span
       class="nav-arrow">Slide {{ this.currentSlide < 9 ? '0' + (this.currentSlide + 1) : this.currentSlide + 1 }}</span>
+    <span class="nav-arrow" (click)="this.slideTo('stack')">Stack ¬</span>
     <span class="btn-prev nav-arrow" (click)="this.slidePrev()"><</span>
     <span class="btn-next nav-arrow" (click)="this.slideNext()">></span>
   </div>

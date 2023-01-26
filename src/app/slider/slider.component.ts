@@ -29,8 +29,6 @@ export class SliderComponent implements OnInit {
     virtual: true,
   };
 
-  onSwiper(swiper: any) {
-  }
 
   onSlideChange(swiper: any) {
     const activeIndex = swiper[0]?.activeIndex || 0;
@@ -46,9 +44,16 @@ export class SliderComponent implements OnInit {
     this.swiperControl.slidePrev();
   }
 
+  slideTo(key: string): void {
+    for (let index = 0; index < this.slider.length; index++) {
+      if (Object.keys(this.slider[index]).some(name => name === key)) {
+        this.swiperControl.slideTo(index);
+      }
+    }
+  }
 
-  constructor(
-    private $cdr: ChangeDetectorRef) {
+
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -61,6 +66,8 @@ export class SliderComponent implements OnInit {
     this.swiperControl = this.swiperControl.elementRef.nativeElement.swiper;
 
     console.log('VIRTUAL', this.swiperControl);
+    this.title = this.slider[0].title;
+
   }
 
 }

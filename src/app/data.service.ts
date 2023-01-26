@@ -10,13 +10,12 @@ export class DataService {
 
   public sliders = [
     [
-      {title: "technology", stack: ['angular', 'typescript', 'docker']},
       {title: "image", image: 'assets/so/so.jpg'},
       {title: "info", info: 'hier steht die beschreibung zu dem projekt'},
+      {title: "technology", stack: ['angular', 'typescript', 'SCSS', 'docker']},
       {title: "ccc", section: 'C', phoneNumber: '789', studentID: 103},
       {title: "dd", section: 'C', phoneNumber: '789', studentID: 103},
       {title: "eee", section: 'C', phoneNumber: '789', studentID: 103},
-
     ],
     [
       {title: "abc2", section: 'A', phoneNumber: '123', studentID: 101},
