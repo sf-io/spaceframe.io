@@ -2,7 +2,7 @@
 
 <!-- all sliders -->
 <ng-container *ngFor="let slider of this.$dataService.sliders; let i = index;">
-  <app-slider [slider]="slider"></app-slider>
+  <app-slider [slider]="slider" [index]="i"></app-slider>
 </ng-container>
 
 <router-outlet></router-outlet>

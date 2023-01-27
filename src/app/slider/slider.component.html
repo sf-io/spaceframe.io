@@ -1,4 +1,6 @@
-<swiper class="my-swiper"
+<div></div>
+
+<swiper class="my-swiper" id="{{ this.swiperInstance }}"
         #myswiper
         [config]="config"
         (slideChange)="onSlideChange($event)">
@@ -6,21 +8,23 @@
 
   <ng-template swiperSlide *ngFor="let slide of slider; index as i">
     <div class="swiper-slide-container">
-      <div class="slide--title">{{ slide.title }}</div>
 
       <!-- SLIDE STACK -->
       <ng-container *ngIf="slide.stack">
+        <div class="slide--title">{{ slide.title }}</div>
         <li class="slide--stack" *ngFor="let technology of slide.stack; index as i;">{{ technology }}</li>
       </ng-container>
 
       <!-- SLIDE INFO -->
       <ng-container *ngIf="slide.info">
+        {{ this.index }}
+        <div class="slide--title">{{ slide.title }}</div>
         <div class="slide--title">{{ slide.info }}</div>
       </ng-container>
 
       <!-- SLIDE IMAGE -->
       <ng-container *ngIf="slide.image">
-        <img [src]="slide.image" width="100%">
+        <img class="slide--image--full" [src]="slide.image">
       </ng-container>
     </div>
   </ng-template>

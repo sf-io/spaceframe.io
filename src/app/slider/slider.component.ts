@@ -14,18 +14,28 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 export class SliderComponent implements OnInit {
 
   swiperControl: any;
-  @ViewChild('myswiper') myswiper: Swiper | undefined;
 
   @Input() slider: any;
+
+  @Input() index: number | undefined;
+
+  @ViewChild('myswiper') myswiper: Swiper | undefined;
+
 
   currentSlide = 0;
   title = 'default';
 
+  swiperInstance: string | undefined;
+
   config: SwiperOptions = {
     slidesPerView: 1.5,
+    //slidesPerView: 'auto',
     spaceBetween: 1,
     scrollbar: {draggable: true},
-    keyboard: {enabled: true},
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true
+    },
     virtual: true,
   };
 
@@ -57,6 +67,8 @@ export class SliderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.swiperInstance = 'swiper' + this.index;
+
   }
 
   ngAfterViewInit(): void {
@@ -67,6 +79,16 @@ export class SliderComponent implements OnInit {
 
     console.log('VIRTUAL', this.swiperControl);
     this.title = this.slider[0].title;
+
+    let x: any;
+
+  }
+
+  ngAfterViewChecked(): void {
+    console.log('this.swiperInstance', this.swiperInstance)
+    // @ts-ignore
+    //this.swiperControl = document.getElementById('swiper0').swiper;
+    // console.log('swiperId', swipe);
 
   }
 

@@ -1,18 +1,7 @@
-/**
- * Swiper 8.4.6
- * Most modern mobile touch slider and framework with hardware accelerated transitions
- * https://swiperjs.com
- *
- * Copyright 2014-2023 Vladimir Kharlampidi
- *
- * Released under the MIT License
- *
- * Released on: January 17, 2023
- */
-
 @import '~swiper/swiper.min.css';
 @import '~swiper/modules/navigation/navigation.min.css';
 @import '~swiper/modules/pagination/pagination.min.css';
+
 
 .my-swiper {
   height: 100%;
@@ -36,6 +25,14 @@
   border-radius: 20px;
   background-color: #cdcdcd;
   display: inline;
+}
+
+.full {
+  width: 1000px;
+}
+
+slide--image--full {
+  object-fit: contain;
 }
 
 /* BOX STYLES */
