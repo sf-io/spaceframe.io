@@ -11,7 +11,29 @@
 .swiper-slide-container {
   background: #fff;
   height: 500px;
+}
+
+.slide-padding {
   padding: 20px;
+}
+
+/* HEADLINE */
+
+.project--number {
+  border-right: #cdcdcd 1px solid;
+  margin: 50px;
+  margin-left: 20px;
+  padding-right: 100px;
+
+
+}
+
+.headline {
+  background: #ffffff;
+  margin-bottom: 1px;
+  font-size: 50px;
+  font-weight: 600;
+
 }
 
 /* SLIDE STYLES */
@@ -38,7 +60,7 @@ slide--image--full {
 /* BOX STYLES */
 
 .slider-nav {
-  margin-bottom: 100px;
+  //margin-bottom: 100px;
 }
 
 .box--title {

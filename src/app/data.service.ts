@@ -10,7 +10,8 @@ export class DataService {
 
   public sliders = [
     [
-      {title: "image", image: 'assets/so/so.jpg'},
+      {title: 'Street-One/CECIL'},
+      {title: "image", image: 'assets/so/sox.jpg'},
       {title: "info", info: 'hier steht die beschreibung zu dem projekt'},
       {title: "technology", stack: ['angular', 'typescript', 'SCSS', 'docker']},
       {title: "ccc", section: 'C', phoneNumber: '789', studentID: 103},

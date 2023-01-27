@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation} from '@angular/core';
 import SwiperCore, {Keyboard, Pagination, Navigation, Virtual, SwiperOptions} from 'swiper';
 import Swiper from "swiper";
 
@@ -15,9 +15,11 @@ export class SliderComponent implements OnInit {
 
   swiperControl: any;
 
+  firstSlide: any;
+
   @Input() slider: any;
 
-  @Input() index: number | undefined;
+  @Input() index = 0;
 
   @ViewChild('myswiper') myswiper: Swiper | undefined;
 
@@ -89,7 +91,11 @@ export class SliderComponent implements OnInit {
     // @ts-ignore
     //this.swiperControl = document.getElementById('swiper0').swiper;
     // console.log('swiperId', swipe);
+  }
 
+  ngOnChanges() {
+// remove first slide from array
+    this.firstSlide = this.slider.shift();
   }
 
 }

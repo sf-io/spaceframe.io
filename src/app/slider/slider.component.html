@@ -1,4 +1,12 @@
-<div></div>
+<div class="headline">
+  <span class="project--number">
+    P/{{ (this.index + 1) < 9 ? '0' + (this.index + 1) : this.index + 1 }}
+  </span>
+
+  <span>
+  {{ this.firstSlide.title }}
+    </span>
+</div>
 
 <swiper class="my-swiper" id="{{ this.swiperInstance }}"
         #myswiper
@@ -7,7 +15,7 @@
 
 
   <ng-template swiperSlide *ngFor="let slide of slider; index as i">
-    <div class="swiper-slide-container">
+    <div class="swiper-slide-container" [ngClass]="!slide.image ? 'slide-padding' : ''">
 
       <!-- SLIDE STACK -->
       <ng-container *ngIf="slide.stack">
@@ -17,7 +25,6 @@
 
       <!-- SLIDE INFO -->
       <ng-container *ngIf="slide.info">
-        {{ this.index }}
         <div class="slide--title">{{ slide.title }}</div>
         <div class="slide--title">{{ slide.info }}</div>
       </ng-container>
