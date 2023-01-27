@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import SwiperCore, {Keyboard, Pagination, Navigation, Virtual, SwiperOptions} from 'swiper';
 import Swiper from "swiper";
 
@@ -81,9 +81,6 @@ export class SliderComponent implements OnInit {
 
     console.log('VIRTUAL', this.swiperControl);
     this.title = this.slider[0].title;
-
-    let x: any;
-
   }
 
   ngAfterViewChecked(): void {
