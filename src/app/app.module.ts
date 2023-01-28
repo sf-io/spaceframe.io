@@ -9,6 +9,8 @@ import { LogoComponent } from './logo/logo.component';
 import { SliderComponent } from './slider/slider.component';
 import { IntroComponent } from './intro/intro.component';
 import { FilenameToImageAltPipe } from './filename-to-image-alt.pipe';
+import { NavigationItemsComponent } from './navigation-items/navigation-items.component';
+import { ModalNavigationComponent } from './modal-navigation/modal-navigation.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FilenameToImageAltPipe } from './filename-to-image-alt.pipe';
     SliderComponent,
     IntroComponent,
     FilenameToImageAltPipe,
+    NavigationItemsComponent,
+    ModalNavigationComponent,
   ],
   imports: [
     BrowserModule,
