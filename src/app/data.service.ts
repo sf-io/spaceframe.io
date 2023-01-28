@@ -11,7 +11,7 @@ export class DataService {
   public sliders = [
     [
       {title: 'Street-One/CECIL'},
-      {title: "image", image: 'assets/so/sox.jpg'},
+      {title: "image", image: 'assets/so/so_x_1.jpg'},
       {title: "info", info: 'hier steht die beschreibung zu dem projekt'},
       {title: "technology", stack: ['angular', 'typescript', 'SCSS', 'docker']},
       {title: "ccc"},

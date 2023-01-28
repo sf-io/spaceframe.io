@@ -8,6 +8,7 @@ import { StackComponent } from './stack/stack.component';
 import { LogoComponent } from './logo/logo.component';
 import { SliderComponent } from './slider/slider.component';
 import { IntroComponent } from './intro/intro.component';
+import { FilenameToImageAltPipe } from './filename-to-image-alt.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { IntroComponent } from './intro/intro.component';
     LogoComponent,
     SliderComponent,
     IntroComponent,
+    FilenameToImageAltPipe,
   ],
   imports: [
     BrowserModule,

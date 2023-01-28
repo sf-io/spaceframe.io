@@ -31,7 +31,7 @@
 
       <!-- SLIDE IMAGE -->
       <ng-container *ngIf="slide.image">
-        <img alt="{{ slide.image }}" class="slide--image--full" [src]="slide.image">
+        <img alt="{{ slide.image | filenameToImageAlt }}" class="slide--image--full" [src]="slide.image">
       </ng-container>
     </div>
   </ng-template>
