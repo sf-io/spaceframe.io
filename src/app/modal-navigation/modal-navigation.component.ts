@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {StateService} from "../state.service";
+import {distinctUntilChanged} from "rxjs";
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-modal-navigation',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-navigation.component.scss']
 })
 export class ModalNavigationComponent implements OnInit {
+  showModal = false;
+  sliders: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private $stateService: StateService,
+    private $dataService: DataService
+  ) {
   }
 
+  ngOnInit(): void {
+    this.$stateService.showModal$.pipe(distinctUntilChanged()).subscribe(toggle => {
+      this.showModal = toggle;
+    })
+
+    this.sliders = this.$dataService.sliders;
+  }
 }

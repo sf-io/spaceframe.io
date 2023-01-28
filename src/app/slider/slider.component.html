@@ -4,7 +4,7 @@
   </div>
 
   <div>
-    {{ this.firstSlide.title }}
+    {{ this.slider[0].title }}
   </div>
 </div>
 
@@ -14,8 +14,9 @@
         (slideChange)="onSlideChange($event)">
 
 
-  <ng-template swiperSlide *ngFor="let slide of slider; index as i">
-    <div class="swiper-slide-container" [ngClass]="!slide.image ? 'slide-padding' : ''">
+  <!-- remove first slide -->
+  <ng-template swiperSlide *ngFor="let slide of slider | slice:1; index as i">
+    <div class="swiper-slide-container" [ngClass]="!slide?.image ? 'slide-padding' : ''">
 
       <!-- SLIDE STACK -->
       <ng-container *ngIf="slide.stack">

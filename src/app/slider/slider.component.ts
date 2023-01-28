@@ -17,7 +17,7 @@ export class SliderComponent implements OnInit {
 
   firstSlide: any;
 
-  @Input() slider: any;
+  @Input() slider: any[] = [];
 
   @Input() index = 0;
 
@@ -64,13 +64,11 @@ export class SliderComponent implements OnInit {
     }
   }
 
-
   constructor() {
   }
 
   ngOnInit(): void {
     this.swiperInstance = 'swiper' + this.index;
-
   }
 
   ngAfterViewInit(): void {
@@ -84,7 +82,7 @@ export class SliderComponent implements OnInit {
   }
 
   ngAfterViewChecked(): void {
-    console.log('this.swiperInstance', this.swiperInstance)
+    //console.log('this.swiperInstance', this.swiperInstance)
     // @ts-ignore
     //this.swiperControl = document.getElementById('swiper0').swiper;
     // console.log('swiperId', swipe);
@@ -92,7 +90,7 @@ export class SliderComponent implements OnInit {
 
   ngOnChanges() {
 // remove first slide from array
-    this.firstSlide = this.slider.shift();
+    // this.firstSlide = this.slider.shift();
   }
 
 }
