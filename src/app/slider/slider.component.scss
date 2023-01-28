@@ -21,19 +21,18 @@
 
 .project--number {
   border-right: #cdcdcd 1px solid;
-  margin: 50px;
-  margin-left: 20px;
-  padding-right: 100px;
-
-
 }
 
 .headline {
   background: #ffffff;
   margin-bottom: 1px;
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 500;
+  display: flex;
+}
 
+.headline div {
+  padding: 40px 20px;
 }
 
 /* SLIDE STYLES */

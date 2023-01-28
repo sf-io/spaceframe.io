@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { StackComponent } from './stack/stack.component';
 import { LogoComponent } from './logo/logo.component';
 import { SliderComponent } from './slider/slider.component';
+import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SliderComponent } from './slider/slider.component';
     StackComponent,
     LogoComponent,
     SliderComponent,
+    IntroComponent,
   ],
   imports: [
     BrowserModule,

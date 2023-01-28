@@ -1,11 +1,11 @@
 <div class="headline">
-  <span class="project--number">
+  <div class="project--number">
     P/{{ (this.index + 1) < 9 ? '0' + (this.index + 1) : this.index + 1 }}
-  </span>
+  </div>
 
-  <span>
-  {{ this.firstSlide.title }}
-    </span>
+  <div>
+    {{ this.firstSlide.title }}
+  </div>
 </div>
 
 <swiper class="my-swiper" id="{{ this.swiperInstance }}"
@@ -31,7 +31,7 @@
 
       <!-- SLIDE IMAGE -->
       <ng-container *ngIf="slide.image">
-        <img class="slide--image--full" [src]="slide.image">
+        <img alt="{{ slide.image }}" class="slide--image--full" [src]="slide.image">
       </ng-container>
     </div>
   </ng-template>

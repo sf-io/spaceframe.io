@@ -1,5 +1,6 @@
 <app-navigation></app-navigation>
 
+<app-intro></app-intro>
 <!-- all sliders -->
 <ng-container *ngFor="let slider of this.$dataService.sliders; let i = index;">
   <app-slider [slider]="slider" [index]="i"></app-slider>
