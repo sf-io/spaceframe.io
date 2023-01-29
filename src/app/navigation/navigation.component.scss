@@ -1,7 +1,12 @@
 .navigation--wrapper {
   height: 10vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  border-bottom: #cdcdcd 1px solid;
 }

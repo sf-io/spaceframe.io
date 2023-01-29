@@ -39,9 +39,9 @@
 </swiper>
 <div class="slider-nav">
   <div class="nav-arrow-wrapper">
-    <span class="nav-arrow box--title">{{ this.title }}</span>
+    <span class="nav-arrow box--title">XDEBUG{{ this.slider[this.activeIndex].title }}</span>
     <span
-      class="nav-arrow">Slide {{ this.currentSlide < 9 ? '0' + (this.currentSlide + 1) : this.currentSlide + 1 }}</span>
+      class="nav-arrow">Slide {{ this.activeIndex < 9 ? '0' + (this.activeIndex + 1) : this.activeIndex + 1 }}</span>
     <span class="nav-arrow" (click)="this.slideTo('stack')">Stack ¬</span>
     <span class="btn-prev nav-arrow" (click)="this.slidePrev()"><</span>
     <span class="btn-next nav-arrow" (click)="this.slideNext()">></span>

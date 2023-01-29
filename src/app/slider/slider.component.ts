@@ -13,6 +13,8 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
 export class SliderComponent implements OnInit {
 
+  activeIndex = 0;
+
   swiperControl: any;
 
   firstSlide: any;
@@ -25,7 +27,6 @@ export class SliderComponent implements OnInit {
 
 
   currentSlide = 0;
-  title = 'default';
 
   swiperInstance: string | undefined;
 
@@ -43,9 +44,7 @@ export class SliderComponent implements OnInit {
 
 
   onSlideChange(swiper: any) {
-    const activeIndex = swiper[0]?.activeIndex || 0;
-    this.currentSlide = activeIndex;
-    this.title = this.slider[activeIndex].title;
+    this.activeIndex = swiper[0]?.activeIndex || 0;
   }
 
   slideNext(): void {
@@ -72,13 +71,8 @@ export class SliderComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    console.log('data', this.slider)
-
     this.swiperControl = this.myswiper || undefined;
     this.swiperControl = this.swiperControl.elementRef.nativeElement.swiper;
-
-    console.log('VIRTUAL', this.swiperControl);
-    this.title = this.slider[0].title;
   }
 
   ngAfterViewChecked(): void {
