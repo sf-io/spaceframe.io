@@ -1,8 +1,14 @@
 html,
 body {
-  margin: 0;
+  margin: 0px;
   color: #000;
   font-family: 'IBM Plex Sans', sans-serif;
   background-color: #cdcdcd;
-  //background-color: #000;
+}
+
+/* GLOBAL VARIABLES */
+
+:root {
+  --background-color: #FFF;
+  --background-color-site: #EEE;
 }
