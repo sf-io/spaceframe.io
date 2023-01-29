@@ -55,10 +55,10 @@ export class SliderComponent implements OnInit {
     this.swiperControl.slidePrev();
   }
 
-  slideTo(key: string): void {
+  public slideTo(key: string): void {
     for (let index = 0; index < this.slider.length; index++) {
       if (Object.keys(this.slider[index]).some(name => name === key)) {
-        this.swiperControl.slideTo(index);
+        this.swiperControl.slideTo(index - 1);
       }
     }
   }
