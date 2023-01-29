@@ -23,13 +23,14 @@ export class DataService {
       {title: "xyz2"},
       {title: "mno2"},
       {title: "abc2"},
-      {title: "xyz2"},
+      {title: "technology", stack: ['angular', 'universal', 'typescript', 'SCSS', 'docker']},
       {title: "mno2"},
     ],
     [
       {title: "slider 3"},
       {title: "xyz2"},
       {title: "mno2"},
+      {title: "technology", stack: ['angular', 'ssr', 'typescript', 'CSS', 'docker', 'traefik']},
     ],
   ];
 }
