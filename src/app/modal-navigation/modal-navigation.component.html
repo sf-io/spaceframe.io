@@ -11,7 +11,7 @@
             <ng-container *ngFor="let slides of slider; let i = index">
               <div class="stack" *ngIf="slides.stack">
                 <li class="stack--button" *ngFor="let technology of slides.stack">
-                  {{ technology }}
+                  {{ technology | titlecase }}
                 </li>
               </div>
             </ng-container>
