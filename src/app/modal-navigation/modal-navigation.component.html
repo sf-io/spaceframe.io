@@ -5,11 +5,15 @@
         <ng-container *ngFor="let slider of sliders; let i = index;">
 
           <div class="project">
-            <div>{{ i + 1 }} {{ slider[0].title }} </div>
+            <div>{{ i + 1 }} {{ slider[0].title }}</div>
             <div>Slides {{ slider.length }}</div>
 
             <ng-container *ngFor="let slides of slider; let i = index">
-              <div *ngIf="slides.stack">{{ slides.stack }}</div>
+              <div class="stack" *ngIf="slides.stack">
+                <li class="stack--button" *ngFor="let technology of slides.stack">
+                  {{ technology }}
+                </li>
+              </div>
             </ng-container>
 
           </div>
