@@ -9,8 +9,17 @@
 }
 
 .swiper-slide-container {
-  background-color: var(--background-color);
   height: 500px;
+}
+
+.slide-border {
+  border-right: 1px solid #ff0000;
+}
+
+.swiper-border {
+  border-left: var(--border-site);
+  border-right: var(--border-site);
+
 }
 
 .slide-padding {
@@ -20,15 +29,16 @@
 /* HEADLINE */
 
 .project--number {
-  border-right: #cdcdcd 1px solid;
+  border-right: var(--border-site);
 }
 
 .headline {
-  background-color: var(--background-color);
+  //background-color: var(--background-color);
   margin-bottom: 1px;
   font-size: 40px;
   font-weight: 500;
   display: flex;
+  border: var(--border-site);
 }
 
 .headline div {
@@ -45,12 +55,9 @@
   padding: 5px 10px;
   border-radius: 20px;
   background-color: #cdcdcd;
-  display: inline;
+  //display: inline;
 }
 
-.full {
-  width: 1000px;
-}
 
 slide--image--full {
   object-fit: contain;
@@ -58,13 +65,19 @@ slide--image--full {
 
 /* BOX STYLES */
 
-.slider-nav {
-  //margin-bottom: 100px;
+.slider-nav-wrapper {
+  display: flex;
+  flex-grow: 1;
+  border: var(--border-site);
+}
+
+.slider-nav-wrapper span:not(:last-child) {
+  border-right: var(--border-site);
 }
 
 .box--title {
-  flex-grow: 1;
   text-align: left !important;
+  width: 66.666%;
 }
 
 .nav-arrow {
@@ -72,20 +85,26 @@ slide--image--full {
   cursor: pointer;
   user-select: none;
   font-size: 30px;
-  background-color: var(--background-color);
-
   padding: 20px;
   margin: 1px 1px 1px 0;
+  flex-grow: 1;
 }
 
 .nav-arrow:hover {
   background-color: #000;
   color: #fff;
-  
 }
 
 
 .nav-arrow-wrapper {
   display: flex;
   justify-content: end;
+}
+
+.info-two-cols {
+  column-count: 2;
+}
+
+.vertical-margin {
+  margin-top: 100px;
 }

@@ -1,4 +1,4 @@
-<div class="headline">
+<div class="headline vertical-margin">
   <div class="project--number">
     P/{{ (this.index + 1) < 9 ? '0' + (this.index + 1) : this.index + 1 }}
   </div>
@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<swiper class="my-swiper" id="{{ this.swiperInstance }}"
+<swiper class="my-swiper swiper-border" id="{{ this.swiperInstance }}"
         #myswiper
         [config]="config"
         (slideChange)="onSlideChange($event)">
@@ -16,7 +16,7 @@
 
   <!-- remove first slide -->
   <ng-template swiperSlide *ngFor="let slide of slider | slice:1; index as i">
-    <div class="swiper-slide-container" [ngClass]="!slide?.image ? 'slide-padding' : ''">
+    <div class="swiper-slide-container slide-border" [ngClass]="!slide?.image ? 'slide-padding' : ''">
 
       <!-- SLIDE STACK -->
       <ng-container *ngIf="slide.stack">
@@ -27,24 +27,30 @@
       <!-- SLIDE INFO -->
       <ng-container *ngIf="slide.info">
         <div class="slide--title">{{ slide.title }}</div>
-        <div class="slide--title">{{ slide.info }}</div>
+        <div class="slide--title info-two-cols">{{ slide.info }}</div>
       </ng-container>
 
       <!-- SLIDE IMAGE -->
       <ng-container *ngIf="slide.image">
+        <!--
         <img alt="{{ slide.image | filenameToImageAlt }}" class="slide--image--full" [src]="slide.image">
+        -->
       </ng-container>
     </div>
   </ng-template>
 </swiper>
-<div class="slider-nav">
-  <div class="nav-arrow-wrapper">
-    <span class="nav-arrow box--title">{{ this.slider[this.activeIndex + 1].title }}</span>
-    <span
-      class="nav-arrow">Slide {{ this.activeIndex < 9 ? '0' + (this.activeIndex + 1) : this.activeIndex + 1 }}</span>
-    <span class="nav-arrow" (click)="this.slideTo('stack')">Stack ¬</span>
-    <span class="btn-prev nav-arrow" (click)="this.slidePrev()"><</span>
-    <span class="btn-next nav-arrow" (click)="this.slideNext()">></span>
-  </div>
+<div class="slider-nav-wrapper">
+  <span class="box--title">{{ this.slider[this.activeIndex + 1].title }}</span>
+  <span class="nav-arrow">
+      Slide {{ this.activeIndex < 9 ? '0' + (this.activeIndex + 1) : this.activeIndex + 1 }}
+    </span>
+  <span class="nav-arrow" (click)="this.slideTo('stack')">Stack ¬</span>
+  <span class="btn-prev nav-arrow" (click)="this.slidePrev()">
+    <img src="assets/icons/arrow-left.svg" width="20">
+  </span>
+  <span class="btn-next nav-arrow" (click)="this.slideNext()">
+        <img src="assets/icons/arrow-right.svg" width="20">
+
+  </span>
 </div>
 

@@ -1,14 +1,17 @@
-html,
 body {
-  margin: 0px;
-  color: #000;
+  margin: var(--margin-site);
+  color: var(--font-color-main);
   font-family: 'IBM Plex Sans', sans-serif;
-  background-color: #cdcdcd;
+  background-color: var(--background-color-site);
 }
 
 /* GLOBAL VARIABLES */
-
 :root {
-  --background-color: #FFF;
+  --background-color: #d0d0d0;
+  --background-color-slider: #EEE;
   --background-color-site: #EEE;
+  --font-color-main: #262626;
+
+  --margin-site: 0 3vw;
+  --border-site: #999 1px solid;
 }

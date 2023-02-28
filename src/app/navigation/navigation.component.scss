@@ -1,14 +1,11 @@
 .navigation--wrapper {
   height: 10vh;
-  width: 100vw;
+  width: 94vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--background-color);
+  //background-color: var(--background-color-site);
   position: fixed;
   z-index: 99999;
   top: 0;
-  border-bottom: #cdcdcd 1px solid;
-  //backdrop-filter: blur(2px);
-
 }
