@@ -1,0 +1,5 @@
+<div id="content_scroll">
+    <div class="project" *ngFor="let project of this.data; let i = index;">
+        <app-slider [slider]="project.slider" [index]="i"></app-slider>
+    </div>
+</div>

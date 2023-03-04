@@ -1,6 +1,21 @@
-import {Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import SwiperCore, {Keyboard, Pagination, Navigation, Virtual, SwiperOptions} from 'swiper';
-import Swiper from "swiper";
+import {
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
+import { distinctUntilChanged } from 'rxjs';
+import SwiperCore, {
+  Keyboard,
+  Pagination,
+  Navigation,
+  Virtual,
+  SwiperOptions,
+} from 'swiper';
+import Swiper from 'swiper';
+import { NEXT_SLIDE, PREV_SLIDE, PROJECT_IN_VIEW } from '../events';
+import { HelperService } from '../helper.service';
 
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
@@ -10,69 +25,78 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
   styleUrls: ['./slider.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-
 export class SliderComponent implements OnInit {
-
   activeIndex = 0;
+  public currentId = 1;
 
   swiperControl: any;
 
   firstSlide: any;
 
-  @Input() slider: any[] = [];
+  @Input() slider: any;
 
   @Input() index = 0;
 
-  @ViewChild('myswiper') myswiper: Swiper | undefined;
+  @Input() direction = 'right';
 
+  @ViewChild('myswiper') myswiper: Swiper | undefined;
 
   currentSlide = 0;
 
   swiperInstance: string | undefined;
 
   config: SwiperOptions = {
-    slidesPerView: 1.5,
-    //slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 1,
-    scrollbar: {draggable: true},
+    scrollbar: { draggable: true },
     keyboard: {
-      enabled: true,
-      onlyInViewport: true
+      enabled: false,
+      onlyInViewport: true,
     },
     virtual: true,
   };
 
-
   onSlideChange(swiper: any) {
+    console.log('onSlideChange', swiper);
+    this.$helperService.adjustProjectView();
+
     this.activeIndex = swiper[0]?.activeIndex || 0;
   }
 
   slideNext(): void {
+    console.log('slideNext');
     this.swiperControl.slideNext();
   }
 
+  /*
   slidePrev(): void {
     this.swiperControl.slidePrev();
   }
 
   public slideTo(key: string): void {
     for (let index = 0; index < this.slider.length; index++) {
-      if (Object.keys(this.slider[index]).some(name => name === key)) {
+      if (Object.keys(this.slider[index]).some((name) => name === key)) {
         this.swiperControl.slideTo(index - 1);
       }
     }
-  }
+  }**/
 
-  constructor() {
-  }
+  constructor(private $helperService: HelperService) {}
 
   ngOnInit(): void {
     this.swiperInstance = 'swiper' + this.index;
+
+    PROJECT_IN_VIEW.pipe(distinctUntilChanged()).subscribe((currentId) => {
+      this.currentId = currentId;
+    });
   }
 
   ngAfterViewInit(): void {
     this.swiperControl = this.myswiper || undefined;
     this.swiperControl = this.swiperControl.elementRef.nativeElement.swiper;
+
+    NEXT_SLIDE.subscribe(() => this.swiperControl.slideNext());
+    PREV_SLIDE.subscribe(() => this.swiperControl.slidePrev());
   }
 
   ngAfterViewChecked(): void {
@@ -83,8 +107,7 @@ export class SliderComponent implements OnInit {
   }
 
   ngOnChanges() {
-// remove first slide from array
+    // remove first slide from array
     // this.firstSlide = this.slider.shift();
   }
-
 }
