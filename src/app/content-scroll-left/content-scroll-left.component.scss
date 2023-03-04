@@ -1,0 +1,18 @@
+#content_scroll_left {
+  z-index: 999;
+  left: 5%;
+  margin: 0;
+  width: 30%;
+  position: fixed;
+  background-color: #fff;
+  //background-color: #fff;
+  color: #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.project_left {
+  font-size: 30px;
+  height: 100vh;
+  color: #000;
+}

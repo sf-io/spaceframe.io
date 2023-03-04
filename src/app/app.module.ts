@@ -11,6 +11,9 @@ import { IntroComponent } from './intro/intro.component';
 import { FilenameToImageAltPipe } from './filename-to-image-alt.pipe';
 import { NavigationItemsComponent } from './navigation-items/navigation-items.component';
 import { ModalNavigationComponent } from './modal-navigation/modal-navigation.component';
+import { ContentScrollComponent } from './content-scroll/content-scroll.component';
+import { ContentFixedComponent } from './content-fixed/content-fixed.component';
+import { ContentScrollLeftComponent } from './content-scroll-left/content-scroll-left.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,12 @@ import { ModalNavigationComponent } from './modal-navigation/modal-navigation.co
     FilenameToImageAltPipe,
     NavigationItemsComponent,
     ModalNavigationComponent,
+    ContentScrollComponent,
+    ContentFixedComponent,
+    ContentScrollLeftComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SwiperModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, SwiperModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

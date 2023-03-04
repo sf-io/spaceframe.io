@@ -1,0 +1,12 @@
+<div id="content_fixed">
+    <div class="button_adjust" (click)="this.$helperService.adjustProjectView()">x</div>
+    <div [ngClass]="{'btn_active': this.prev }" class="btn" (click)="this.prevSlide()">prev</div>
+    <div class="btn" (click)="this.nextSlide()">next</div>
+    <div class="btn">up</div>
+    <div class="btn">down</div>
+
+    <div class="vertical_infos">
+        <div class="vertical">{{ this.scrollY }}</div>
+        <div class="vertical">SPACEFRAME</div>
+    </div>
+</div>

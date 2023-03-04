@@ -1,44 +1,28 @@
-<div class="headline vertical-margin">
-  <div class="project--number">
-    P/{{ (this.index + 1) < 9 ? '0' + (this.index + 1) : this.index + 1 }}
-  </div>
-
-  <div>
-    {{ this.slider[0].title }}
-  </div>
+<div class="project_intro">
+  P/{{ (this.currentId) < 9 ? '0' + (this.currentId) : this.currentId }} <div>
+    {{ this.slider?.title }}
+</div>
 </div>
 
-<swiper class="my-swiper swiper-border" id="{{ this.swiperInstance }}"
-        #myswiper
-        [config]="config"
-        (slideChange)="onSlideChange($event)">
 
 
-  <!-- remove first slide -->
-  <ng-template swiperSlide *ngFor="let slide of slider | slice:1; index as i">
-    <div class="swiper-slide-container slide-border" [ngClass]="!slide?.image ? 'slide-padding' : ''">
 
-      <!-- SLIDE STACK -->
-      <ng-container *ngIf="slide.stack">
-        <div class="slide--title">{{ slide.title }}</div>
-        <li class="slide--stack" *ngFor="let technology of slide.stack; index as i;">{{ technology }}</li>
-      </ng-container>
+<swiper class="my-swiper" id="{{ this.swiperInstance }}" #myswiper [config]="config"
+  (slideChange)="onSlideChange($event)">
 
-      <!-- SLIDE INFO -->
-      <ng-container *ngIf="slide.info">
-        <div class="slide--title">{{ slide.title }}</div>
-        <div class="slide--title info-two-cols">{{ slide.info }}</div>
-      </ng-container>
+  <ng-template swiperSlide *ngFor="let slide of slider; index as i">
+    <div class="swiper-slide">
+      SLIDE: {{ slide.title }} / {{ i + 1 }}
+      <div>SLIDE</div>
 
-      <!-- SLIDE IMAGE -->
-      <ng-container *ngIf="slide.image">
-        <!--
-        <img alt="{{ slide.image | filenameToImageAlt }}" class="slide--image--full" [src]="slide.image">
-        -->
-      </ng-container>
+
+      <div *ngIf="slide.image">
+        <img [src]="slide.image">
+      </div>
     </div>
   </ng-template>
 </swiper>
+<!--
 <div class="slider-nav-wrapper">
   <span class="box--title">{{ this.slider[this.activeIndex + 1].title }}</span>
   <span class="nav-arrow">
@@ -53,4 +37,4 @@
 
   </span>
 </div>
-
+-->

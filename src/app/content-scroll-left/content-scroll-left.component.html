@@ -1,0 +1,5 @@
+<div id="content_scroll_left" [ngStyle]="{ 'bottom' : (-this.scrollY) + 'px' }">
+    <div class="project_left" *ngFor="let project of this.data_reversed; let i = index;">
+        <app-slider [slider]="project.slider_left" [index]="i"></app-slider>
+    </div>
+</div>
