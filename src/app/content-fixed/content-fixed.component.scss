@@ -13,8 +13,9 @@
 }
 
 .btn_active {
-  background-color: #bdbdbd !important;
-  transition: background-color 0.3s ease-in-out;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn {
@@ -27,7 +28,8 @@
 }
 
 .btn:hover {
-  background-color: #bdbdbd;
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .vertical_infos {
