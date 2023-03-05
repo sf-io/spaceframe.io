@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { DOWN_PROJECT, NEXT_SLIDE, PREV_SLIDE, UP_PROJECT } from './events';
+import {
+  DOWN_PROJECT,
+  IS_NAVIGATION_OPEN,
+  NEXT_SLIDE,
+  PREV_SLIDE,
+  UP_PROJECT,
+} from './events';
 
 @Injectable({
   providedIn: 'root',
@@ -8,25 +14,41 @@ import { DOWN_PROJECT, NEXT_SLIDE, PREV_SLIDE, UP_PROJECT } from './events';
 export class HelperService {
   constructor() {
     fromEvent(document, 'keydown').subscribe((event: any) => {
+      console.log('KEY PRESSED', event);
+
+      if (event.keyCode === 9 || event.key === 'Tab') {
+        IS_NAVIGATION_OPEN.next(true);
+        event.preventDefault();
+      }
+
+      if (event.keyCode === 27 || event.key === 'Escape') {
+        IS_NAVIGATION_OPEN.next(false);
+        event.preventDefault();
+      }
+
       if (event.keyCode === 40 || event.key === 'ArrowDown') {
         this.goToView();
         DOWN_PROJECT.next(true);
+        event.preventDefault();
       }
 
       if (event.keyCode === 38 || event.key === 'ArrowUp') {
         this.goToView(-1);
         UP_PROJECT.next(true);
+        event.preventDefault();
       }
 
       if (event.keyCode === 37 || event.key === 'ArrowLeft') {
         PREV_SLIDE.next(true);
+        event.preventDefault();
       }
 
       if (event.keyCode === 39 || event.key === 'ArrowRight') {
         NEXT_SLIDE.next(true);
+        event.preventDefault();
       }
 
-      event.preventDefault();
+      //event.preventDefault();
     });
   }
 

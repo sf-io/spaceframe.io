@@ -1,5 +1,8 @@
-<div id="content_scroll">
-    <div class="project" *ngFor="let project of this.data; let i = index;">
+<div id="content_scroll" [ngStyle]="{
+    'width' : (this.isOpen ? 45 : 65) + '%',
+    'margin-left' : (this.isOpen ? 55 : 35) + '%'
+}">
+    <div [id]="'project-' + i" class="project" *ngFor="let project of this.data; let i = index;">
         <app-slider [slider]="project.slider" [index]="i"></app-slider>
     </div>
 </div>

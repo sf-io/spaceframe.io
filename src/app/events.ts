@@ -9,3 +9,4 @@ export const NEXT_SLIDE = new Subject();
 export const PREV_SLIDE = new Subject();
 export const UP_PROJECT = new Subject();
 export const DOWN_PROJECT = new Subject();
+export const IS_NAVIGATION_OPEN = new BehaviorSubject<boolean>(false);

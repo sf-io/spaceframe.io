@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { PROJECT_IN_VIEW } from '../events';
+import { IS_NAVIGATION_OPEN, PROJECT_IN_VIEW } from '../events';
 import { data } from '../data';
 
 @Component({
@@ -14,10 +14,14 @@ export class ContentScrollComponent implements OnInit, AfterViewInit {
 
   public isMatch = false;
 
+  public isOpen = false;
+
   constructor() {}
 
   ngOnInit(): void {
     PROJECT_IN_VIEW.subscribe((id) => (this.currentId = id));
+
+    IS_NAVIGATION_OPEN.subscribe((state) => (this.isOpen = state));
   }
 
   ngAfterViewInit(): void {
