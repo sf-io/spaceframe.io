@@ -2,9 +2,11 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { distinctUntilChanged, fromEvent } from 'rxjs';
 import {
   BOTH_SIDES_MATCH,
+  DOWN_PROJECT,
   NEXT_SLIDE,
   PREV_SLIDE,
   PROJECT_IN_VIEW,
+  UP_PROJECT,
 } from '../events';
 import { data } from '../data';
 import { ViewportScroller } from '@angular/common';
@@ -22,21 +24,35 @@ export class ContentFixedComponent implements OnInit {
   public isMatch = false;
   public scrollY = 0;
   public prev = false;
+  public next = false;
+  public down = false;
+  public up = false;
 
   public data = data;
   constructor(
-    private $cdr: ChangeDetectorRef,
+    public $cdr: ChangeDetectorRef,
     public $helperService: HelperService
   ) {}
 
   ngOnInit(): void {
     PREV_SLIDE.subscribe(() => {
       this.prev = true;
-      console.log('clicked prev');
+      this.resetButton();
     });
 
     NEXT_SLIDE.subscribe(() => {
-      console.log('clicked next');
+      this.next = true;
+      this.resetButton();
+    });
+
+    UP_PROJECT.subscribe(() => {
+      this.up = true;
+      this.resetButton();
+    });
+
+    DOWN_PROJECT.subscribe(() => {
+      this.down = true;
+      this.resetButton();
     });
 
     BOTH_SIDES_MATCH.pipe(distinctUntilChanged()).subscribe((state) => {
@@ -64,6 +80,16 @@ export class ContentFixedComponent implements OnInit {
     NEXT_SLIDE.next(true);
   }
 
+  resetButton() {
+    setTimeout(this.remove, 300);
+  }
+
+  remove = () => {
+    this.prev = false;
+    this.next = false;
+    this.up = false;
+    this.down = false;
+  };
   /*
   public adjustProjectView(): void {
     console.log('yPos', window.scrollY);
