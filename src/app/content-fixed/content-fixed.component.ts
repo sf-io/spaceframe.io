@@ -3,13 +3,13 @@ import { distinctUntilChanged, fromEvent } from 'rxjs';
 import {
   BOTH_SIDES_MATCH,
   DOWN_PROJECT,
+  IS_NAVIGATION_OPEN,
   NEXT_SLIDE,
   PREV_SLIDE,
   PROJECT_IN_VIEW,
   UP_PROJECT,
 } from '../events';
 import { data } from '../data';
-import { ViewportScroller } from '@angular/common';
 import { HelperService } from '../helper.service';
 
 @Component({
@@ -27,6 +27,7 @@ export class ContentFixedComponent implements OnInit {
   public next = false;
   public down = false;
   public up = false;
+  public isOpen = false;
 
   public data = data;
   constructor(
@@ -90,17 +91,9 @@ export class ContentFixedComponent implements OnInit {
     this.up = false;
     this.down = false;
   };
-  /*
-  public adjustProjectView(): void {
-    console.log('yPos', window.scrollY);
-    const yScrollTarget =
-      Math.round(window.scrollY / window.innerHeight) * window.innerHeight;
-    console.log('yPos target', yScrollTarget);
 
-    window.scrollTo({
-      top: yScrollTarget,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }*/
+  toggleNavigation(): void {
+    this.isOpen = !this.isOpen;
+    IS_NAVIGATION_OPEN.next(this.isOpen);
+  }
 }

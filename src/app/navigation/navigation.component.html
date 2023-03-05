@@ -1,4 +1,18 @@
-<div class="navigation--wrapper">
-  <app-logo></app-logo>
-  <app-navigation-items></app-navigation-items>
+<div #comp class="navigation__wrapper" [ngStyle]="{
+  'width' : (this.isOpen ? 20 : 0) + '%'
+}">
+  <div class="content">
+    <div class="header">
+      <input type="search" id="search" placeholder="Search" (input)="onSearchChange($event)" />
+    </div>
+    <li *ngFor="let project of projects; let i = index;" class="project_item" (click)="scrollToProject(i)">
+      <div>
+        <!--
+        <span class="project_number">{{ i }}</span>
+        -->
+        <span>{{ project.title }}</span>
+      </div>
+    </li>
+
+  </div>
 </div>

@@ -8,8 +8,15 @@
   border-right: 1px solid #000;
 }
 .top_corner {
-  height: 92px;
   border-bottom: 1px solid #000;
+  text-align: center;
+  padding: 35px 0;
+  cursor: pointer;
+}
+
+.top_corner:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .btn_active {

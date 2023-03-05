@@ -1,6 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { distinctUntilChanged, fromEvent } from 'rxjs';
-import { BOTH_SIDES_MATCH, PROJECT_IN_VIEW } from '../events';
+import {
+  BOTH_SIDES_MATCH,
+  IS_NAVIGATION_OPEN,
+  PROJECT_IN_VIEW,
+} from '../events';
 import { data, data_reversed } from '../data';
 
 @Component({
@@ -15,7 +19,7 @@ export class ContentScrollLeftComponent implements OnInit {
   public scrollY = Math.floor(window.scrollY);
   public innerHeight = window.innerHeight;
   public isMatch = false;
-
+  public isNavigationOpen = false;
   public data_reversed = data_reversed;
 
   constructor(private $cdr: ChangeDetectorRef) {}
@@ -26,6 +30,10 @@ export class ContentScrollLeftComponent implements OnInit {
       console.log('change', state);
       this.isMatch = state;
     });
+
+    IS_NAVIGATION_OPEN.pipe(distinctUntilChanged()).subscribe(
+      (state) => (this.isNavigationOpen = state)
+    );
 
     PROJECT_IN_VIEW.pipe(distinctUntilChanged()).subscribe((id) => {
       this.project = data[id];
