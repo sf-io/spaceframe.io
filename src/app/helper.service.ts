@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { delay, fromEvent } from 'rxjs';
-import { NEXT_SLIDE, PREV_SLIDE } from './events';
+import { fromEvent } from 'rxjs';
+import { DOWN_PROJECT, NEXT_SLIDE, PREV_SLIDE, UP_PROJECT } from './events';
 
 @Injectable({
   providedIn: 'root',
@@ -8,18 +8,17 @@ import { NEXT_SLIDE, PREV_SLIDE } from './events';
 export class HelperService {
   constructor() {
     fromEvent(document, 'keydown').subscribe((event: any) => {
-      console.log('KEY', event);
-
       if (event.keyCode === 40 || event.key === 'ArrowDown') {
         this.goToView();
+        DOWN_PROJECT.next(true);
       }
+
       if (event.keyCode === 38 || event.key === 'ArrowUp') {
         this.goToView(-1);
+        UP_PROJECT.next(true);
       }
 
       if (event.keyCode === 37 || event.key === 'ArrowLeft') {
-        PREV_SLIDE.next(true);
-
         PREV_SLIDE.next(true);
       }
 
@@ -44,10 +43,8 @@ export class HelperService {
   }
 
   public adjustProjectView(): void {
-    console.log('yPos', window.scrollY);
     const yScrollTarget =
       Math.round(window.scrollY / window.innerHeight) * window.innerHeight;
-    console.log('yPos target', yScrollTarget);
 
     window.scrollTo({
       top: yScrollTarget,
