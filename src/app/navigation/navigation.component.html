@@ -7,9 +7,6 @@
     </div>
     <li *ngFor="let project of projects; let i = index;" class="project_item" (click)="scrollToProject(i)">
       <div>
-        <!--
-        <span class="project_number">{{ i }}</span>
-        -->
         <span>{{ project.title }}</span>
       </div>
     </li>

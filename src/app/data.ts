@@ -47,8 +47,7 @@ export const data = [
     ],
     slider_left: [
       {
-        title:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam',
+        title: 'slide_left 2 mpor invidunt ut labore et dolore magna aliquyam',
       },
       {
         title:
@@ -73,6 +72,19 @@ export const data = [
       },
       {
         title: 'slider3 slide3',
+      },
+    ],
+    slider_left: [
+      {
+        title: 'slide_left 3 mpor invidunt ut labore et dolore magna aliquyam',
+      },
+      {
+        title:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam',
+      },
+      {
+        title:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam',
       },
     ],
   },

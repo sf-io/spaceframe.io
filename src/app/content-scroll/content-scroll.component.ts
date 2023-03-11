@@ -31,7 +31,9 @@ export class ContentScrollComponent implements OnInit, AfterViewInit {
       for (let projectId = 0; projectId < projects.length; projectId++) {
         let yPosition = projects[projectId].getBoundingClientRect().top;
 
-        if (yPosition > 0 && yPosition < window.innerHeight) {
+        // console.log('xview c:', projectId, yPosition, window.innerHeight);
+
+        if (yPosition >= 0 && yPosition < window.innerHeight) {
           PROJECT_IN_VIEW.next(projectId);
         }
       }

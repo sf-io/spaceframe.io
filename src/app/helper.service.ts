@@ -14,8 +14,6 @@ import {
 export class HelperService {
   constructor() {
     fromEvent(document, 'keydown').subscribe((event: any) => {
-      console.log('KEY PRESSED', event);
-
       if (event.keyCode === 9 || event.key === 'Tab') {
         IS_NAVIGATION_OPEN.next(true);
         event.preventDefault();
@@ -47,8 +45,6 @@ export class HelperService {
         NEXT_SLIDE.next(true);
         event.preventDefault();
       }
-
-      //event.preventDefault();
     });
   }
 
