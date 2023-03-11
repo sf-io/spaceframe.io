@@ -1,15 +1,13 @@
 <div class="project_intro">
-  P/{{ (this.currentId) < 9 ? '0' + (this.currentId) : this.currentId }} <div>
-    {{ this.slider?.title }}
+  P/{{ (this.sliderIndex + 1) < 9 ? '0' + (this.sliderIndex + 1) : this.sliderIndex +1 }} <div>
 </div>
+<div *ngIf="this.slidesCount">SLIDE {{ this.activeSlide }} / {{ this.slider.length }} </div>
 </div>
 
 
 
 
-<swiper class="my-swiper" id="{{ this.swiperInstance }}" #myswiper [config]="config"
-  (slideChange)="onSlideChange($event)">
-
+<swiper class="my-swiper" #swiper (swiper)="onSwiper($event)" (slideChange)="onSlideChange($event)">
   <ng-template swiperSlide *ngFor="let slide of slider; index as i">
     <div class="swiper-slide">
       SLIDE: {{ slide.title }} / {{ i + 1 }}
@@ -19,22 +17,9 @@
       <div *ngIf="slide.image">
         <img [src]="slide.image">
       </div>
+      <br>
+      <span>SWIPER ENABLED ? {{ this.isSwiperActive }} </span>
+      <span>{{ this.currentId }} | {{ this.sliderIndex }}</span>
     </div>
   </ng-template>
 </swiper>
-<!--
-<div class="slider-nav-wrapper">
-  <span class="box--title">{{ this.slider[this.activeIndex + 1].title }}</span>
-  <span class="nav-arrow">
-      Slide {{ this.activeIndex < 9 ? '0' + (this.activeIndex + 1) : this.activeIndex + 1 }}
-    </span>
-  <span class="nav-arrow" (click)="this.slideTo('stack')">Stack ¬</span>
-  <span class="btn-prev nav-arrow" (click)="this.slidePrev()">
-    <img src="assets/icons/arrow-left.svg" width="20">
-  </span>
-  <span class="btn-next nav-arrow" (click)="this.slideNext()">
-        <img src="assets/icons/arrow-right.svg" width="20">
-
-  </span>
-</div>
--->

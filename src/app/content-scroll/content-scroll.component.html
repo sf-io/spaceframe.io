@@ -3,6 +3,6 @@
     'margin-left' : (this.isOpen ? 55 : 35) + '%'
 }">
     <div [id]="'project-' + i" class="project" *ngFor="let project of this.data; let i = index;">
-        <app-slider [slider]="project.slider" [index]="i"></app-slider>
+        <app-slider [slider]="project.slider" [position]="'right'" [sliderIndex]=" i" [slidesCount]="true"></app-slider>
     </div>
 </div>

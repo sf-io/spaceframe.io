@@ -2,6 +2,7 @@
     'bottom' : (-this.scrollY) + 'px',
     'left' : (this.isNavigationOpen ? 25 : 5) + '%' }">
     <div class="project_left" *ngFor="let project of this.data_reversed; let i = index;">
-        <app-slider [slider]="project.slider_left" [index]="i"></app-slider>
+        <app-slider [slider]="project.slider_left" [position]="'left'"
+            [sliderIndex]="this.data_reversed.length - i - 1"></app-slider>
     </div>
 </div>

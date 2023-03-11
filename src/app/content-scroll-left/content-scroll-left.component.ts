@@ -25,9 +25,7 @@ export class ContentScrollLeftComponent implements OnInit {
   constructor(private $cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    console.log('this.data', this.data_reversed);
     BOTH_SIDES_MATCH.pipe(distinctUntilChanged()).subscribe((state) => {
-      console.log('change', state);
       this.isMatch = state;
     });
 
@@ -38,12 +36,10 @@ export class ContentScrollLeftComponent implements OnInit {
     PROJECT_IN_VIEW.pipe(distinctUntilChanged()).subscribe((id) => {
       this.project = data[id];
       this.currentId = id;
-      // this.title = this.project.title;
       this.$cdr.detectChanges();
     });
 
     fromEvent(window, 'scroll').subscribe(() => {
-      console.log('scroll', Math.floor(window.scrollY));
       this.scrollY = Math.floor(window.scrollY);
     });
   }
