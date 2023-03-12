@@ -1,25 +1,41 @@
 <div class="project_intro">
-  P/{{ (this.sliderIndex + 1) < 9 ? '0' + (this.sliderIndex + 1) : this.sliderIndex +1 }} <div>
-</div>
-<div *ngIf="this.slidesCount">SLIDE {{ this.activeSlide }} / {{ this.slider.length }} </div>
-</div>
-
-
-
-
-<swiper class="my-swiper" #swiper (swiper)="onSwiper($event)" (slideChange)="onSlideChange($event)">
-  <ng-template swiperSlide *ngFor="let slide of slider; index as i">
-    <div class="swiper-slide">
-      SLIDE: {{ slide.title }} / {{ i + 1 }}
-      <div>SLIDE</div>
-
-
-      <div *ngIf="slide.image">
-        <img [src]="slide.image">
+  <div *ngIf="position === 'left'">
+    P/{{ (this.sliderIndex + 1) < 9 ? '0' + (this.sliderIndex + 1) : this.sliderIndex +1 }} </div>
+      <div *ngIf="position === 'right'">
+        {{ this.slider[0]?.headline || '- '}}
       </div>
-      <br>
-      <span>SWIPER ENABLED ? {{ this.isSwiperActive }} </span>
-      <span>{{ this.currentId }} | {{ this.sliderIndex }}</span>
-    </div>
-  </ng-template>
-</swiper>
+      <div>
+
+      </div>
+  </div>
+
+
+  <!-- SLIDER DESKTOP -->
+  <ng-container *ngIf="!this.$helperService.showAtBreakpoint(['sm'])">
+    <swiper [config]="config" class="my-swiper" #swiper (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange($event)">
+      <ng-template swiperSlide *ngFor="let slide of slider; index as i">
+        <div class="swiper-slide">
+          <div *ngIf="slide.image">
+            <img [src]="slide.image">
+          </div>
+          <div>SLIDE: {{ slide.title }}</div>
+        </div>
+      </ng-template>
+    </swiper>
+  </ng-container>
+
+  <!-- SLIDER MOBILE -->
+  <ng-container *ngIf="this.$helperService.showAtBreakpoint(['sm'])">
+    <swiper [config]="config_mobile" class="my-swiper" #swiper (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange($event)">
+      <ng-template swiperSlide *ngFor="let slide of slider; index as i">
+        <div class="swiper-slide">
+          <div *ngIf="slide.image">
+            <img [src]="slide.image">
+          </div>
+          <div>SLIDE: {{ slide.title }}</div>
+        </div>
+      </ng-template>
+    </swiper>
+  </ng-container>

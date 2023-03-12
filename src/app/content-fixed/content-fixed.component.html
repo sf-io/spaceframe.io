@@ -1,4 +1,4 @@
-<div id="content_fixed">
+<div *ngIf="!this.$helperService.showAtBreakpoint(['sm'])" id="content_fixed">
     <div class="top_corner" (click)="this.toggleNavigation()">
         <i *ngIf="this.isOpen" class="fa-solid fa-xmark"></i>
         <i *ngIf="!this.isOpen" class="fa-solid fa-bars"></i>
