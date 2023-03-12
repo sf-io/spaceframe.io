@@ -1,4 +1,4 @@
-<div #comp class="navigation__wrapper" [ngStyle]="{
+<div *ngIf="!this.$helperService.showAtBreakpoint(['sm'])" #comp class="navigation__wrapper" [ngStyle]="{
   'width' : (this.isOpen ? 20 : 0) + '%'
 }">
   <div class="content">

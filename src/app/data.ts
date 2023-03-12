@@ -1,10 +1,8 @@
 export const data = [
   {
-    title: 'title 1',
-    desc: 'beschreibung 1',
-    href: 'project1',
     slider: [
       {
+        headline: 'street-one',
         title: 'slider1 slide1',
         image: 'assets/so/so.jpg',
       },

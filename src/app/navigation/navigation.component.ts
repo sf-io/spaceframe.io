@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { distinctUntilChanged } from 'rxjs';
-import { IS_NAVIGATION_OPEN } from '../events';
+import { CURRENT_BREAKPOINT, IS_NAVIGATION_OPEN } from '../events';
 import { data } from '../data';
+import { HelperService } from '../helper.service';
 
 @Component({
   selector: 'app-navigation',
@@ -14,21 +15,35 @@ export class NavigationComponent implements OnInit {
 
   @ViewChild('comp') comp!: ElementRef;
 
-  constructor() {}
+  constructor(public $helperService: HelperService) {}
 
   ngOnInit(): void {
     IS_NAVIGATION_OPEN.pipe(distinctUntilChanged()).subscribe(
       (state) => (this.isOpen = state)
     );
+
+    /*
+    CURRENT_BREAKPOINT.pipe(distinctUntilChanged()).subscribe((b) => {
+      console.log('log', b);
+    });*/
+  }
+
+  callme() {
+    console.log('Called med');
   }
 
   onSearchChange(e: Event): void {
     const target = e.target as HTMLTextAreaElement;
     this.projects = data;
 
+    this.projects = this.projects.filter((project) => {
+      const p = Object.keys(project);
+      console.log('log', p);
+    });
+    /** 
     this.projects = this.projects.filter(
       (project) => project.title.indexOf(target.value) > -1
-    );
+    );**/
   }
   scrollToProject(id: any): void {
     const projectId = 'project-' + id.toString();

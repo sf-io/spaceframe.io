@@ -1,4 +1,4 @@
-<div id="content_scroll_left" [ngStyle]="{ 
+<div *ngIf="!this.$helperService.showAtBreakpoint(['sm'])" id="content_scroll_left" [ngStyle]="{ 
     'bottom' : (-this.scrollY) + 'px',
     'left' : (this.isNavigationOpen ? 25 : 5) + '%' }">
     <div class="project_left" *ngFor="let project of this.data_reversed; let i = index;">

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import {
+  CURRENT_BREAKPOINT,
   DOWN_PROJECT,
   IS_NAVIGATION_OPEN,
   NEXT_SLIDE,
@@ -12,8 +13,17 @@ import {
   providedIn: 'root',
 })
 export class HelperService {
+  private currentBreakpoint = '';
+
   constructor() {
+    fromEvent(window, 'resize').subscribe(() => {
+      this.checkBreakpoint();
+    });
     fromEvent(document, 'keydown').subscribe((event: any) => {
+      if (this.showAtBreakpoint(['sm'])) {
+        return;
+      }
+
       if (event.keyCode === 9 || event.key === 'Tab') {
         IS_NAVIGATION_OPEN.next(true);
         event.preventDefault();
@@ -46,6 +56,32 @@ export class HelperService {
         event.preventDefault();
       }
     });
+  }
+
+  public checkBreakpoint(): void {
+    const w = Math.min(window.innerWidth, document.documentElement.clientWidth);
+    switch (true) {
+      case w < 768:
+        this.currentBreakpoint = 'sm';
+        break;
+      /*
+      case w < 600:
+        this.currentBreakpoint = 'md';
+        break;
+      case w < 768:
+        this.currentBreakpoint = 'lg';
+        break;
+        */
+      case w >= 768:
+        this.currentBreakpoint = 'xl';
+        break;
+    }
+    CURRENT_BREAKPOINT.next(this.currentBreakpoint);
+  }
+
+  public showAtBreakpoint(breakpoints: string[]) {
+    // console.log('DEBUG', breakpoints, breakpoints.includes(this.currentBreakpoint));
+    return breakpoints.includes(this.currentBreakpoint);
   }
 
   public goToView(step = 1): void {

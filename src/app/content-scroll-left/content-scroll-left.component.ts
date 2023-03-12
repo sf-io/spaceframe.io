@@ -6,6 +6,7 @@ import {
   PROJECT_IN_VIEW,
 } from '../events';
 import { data, data_reversed } from '../data';
+import { HelperService } from '../helper.service';
 
 @Component({
   selector: 'app-content-scroll-left',
@@ -22,7 +23,10 @@ export class ContentScrollLeftComponent implements OnInit {
   public isNavigationOpen = false;
   public data_reversed = data_reversed;
 
-  constructor(private $cdr: ChangeDetectorRef) {}
+  constructor(
+    private $cdr: ChangeDetectorRef,
+    public $helperService: HelperService
+  ) {}
 
   ngOnInit(): void {
     BOTH_SIDES_MATCH.pipe(distinctUntilChanged()).subscribe((state) => {
