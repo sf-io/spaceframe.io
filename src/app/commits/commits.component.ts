@@ -7,13 +7,15 @@ import { ApiService } from '../api.service';
   styleUrls: ['./commits.component.scss'],
 })
 export class CommitsComponent implements OnInit {
-  public data: any;
+  public data: any[] = [];
 
   constructor(private $apiService: ApiService) {}
 
   ngOnInit(): void {
     this.$apiService.getData().subscribe((res) => {
-      this.data = res || [];
+      if (res) {
+        this.data = res;
+      }
       console.log('github', res);
     });
   }
