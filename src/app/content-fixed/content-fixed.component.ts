@@ -5,6 +5,7 @@ import {
   DOWN_PROJECT,
   IS_NAVIGATION_OPEN,
   NEXT_SLIDE,
+  ON_NAVIGATION_END,
   PREV_SLIDE,
   PROJECT_IN_VIEW,
   UP_PROJECT,
@@ -28,6 +29,7 @@ export class ContentFixedComponent implements OnInit {
   public down = false;
   public up = false;
   public isOpen = false;
+  public isHome = true;
 
   public data = data;
   constructor(
@@ -36,6 +38,9 @@ export class ContentFixedComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    ON_NAVIGATION_END.subscribe(() => {
+      this.isHome = this.$helperService.isHome();
+    });
     PREV_SLIDE.subscribe(() => {
       this.prev = true;
       this.resetButton();

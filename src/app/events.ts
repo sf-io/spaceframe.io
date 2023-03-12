@@ -9,3 +9,4 @@ export const UP_PROJECT = new Subject();
 export const DOWN_PROJECT = new Subject();
 export const IS_NAVIGATION_OPEN = new BehaviorSubject<boolean>(false);
 export const CURRENT_BREAKPOINT = new Subject<string>();
+export const ON_NAVIGATION_END = new Subject<any>();

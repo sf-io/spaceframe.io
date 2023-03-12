@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <div>{{ data.length }}</div>
+
+    <li *ngFor="let msg of data; let i = index">
+        {{ i }} {{ msg.commit.message }}
+    </li>
+</div>
