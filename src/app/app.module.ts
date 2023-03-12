@@ -11,6 +11,9 @@ import { FilenameToImageAltPipe } from './filename-to-image-alt.pipe';
 import { ContentScrollComponent } from './content-scroll/content-scroll.component';
 import { ContentFixedComponent } from './content-fixed/content-fixed.component';
 import { ContentScrollLeftComponent } from './content-scroll-left/content-scroll-left.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommitsComponent } from './commits/commits.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +26,10 @@ import { ContentScrollLeftComponent } from './content-scroll-left/content-scroll
     ContentScrollComponent,
     ContentFixedComponent,
     ContentScrollLeftComponent,
+    CommitsComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SwiperModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],
   providers: [],
   bootstrap: [AppComponent],
 })

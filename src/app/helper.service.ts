@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
 import {
   CURRENT_BREAKPOINT,
   DOWN_PROJECT,
   IS_NAVIGATION_OPEN,
   NEXT_SLIDE,
+  ON_NAVIGATION_END,
   PREV_SLIDE,
   UP_PROJECT,
 } from './events';
@@ -15,7 +17,17 @@ import {
 export class HelperService {
   private currentBreakpoint = '';
 
-  constructor() {
+  constructor(private $router: Router) {
+    this.$router.events.subscribe((value) => {
+      console.log('router', this.$router.url);
+
+      console.log('Value', value);
+      if (value instanceof NavigationEnd) {
+        ON_NAVIGATION_END.next(value);
+      }
+      // console.log(this.router.url.toString());
+    });
+
     fromEvent(window, 'resize').subscribe(() => {
       this.checkBreakpoint();
     });
@@ -105,5 +117,9 @@ export class HelperService {
       left: 0,
       behavior: 'smooth',
     });
+  }
+
+  isHome(): boolean {
+    return this.$router.url === '/';
   }
 }

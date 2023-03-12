@@ -3,6 +3,7 @@ import { fromEvent } from 'rxjs';
 import { IS_NAVIGATION_OPEN, PROJECT_IN_VIEW } from '../events';
 import { data } from '../data';
 import { HelperService } from '../helper.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-content-scroll',
@@ -19,7 +20,10 @@ export class ContentScrollComponent implements OnInit, AfterViewInit {
 
   public isOpen = false;
 
-  constructor(public $helperService: HelperService) {}
+  constructor(
+    public $helperService: HelperService,
+    private $apiService: ApiService
+  ) {}
 
   ngOnInit(): void {
     console.log('data', this.data);
@@ -50,9 +54,9 @@ export class ContentScrollComponent implements OnInit, AfterViewInit {
   mergeSlider(): void {
     data.forEach((item) => {
       for (let i = 0; i < item.slider.length; i++) {
-     //   item.slider.splice(i, 0, item.slider_left[i]);
+        //   item.slider.splice(i, 0, item.slider_left[i]);
       }
     });
-   // console.log('merged data', data);
+    // console.log('merged data', data);
   }
 }
