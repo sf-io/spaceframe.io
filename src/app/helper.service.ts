@@ -19,13 +19,9 @@ export class HelperService {
 
   constructor(private $router: Router) {
     this.$router.events.subscribe((value) => {
-      console.log('router', this.$router.url);
-
-      console.log('Value', value);
       if (value instanceof NavigationEnd) {
         ON_NAVIGATION_END.next(value);
       }
-      // console.log(this.router.url.toString());
     });
 
     fromEvent(window, 'resize').subscribe(() => {

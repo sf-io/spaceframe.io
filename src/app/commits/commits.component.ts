@@ -13,12 +13,8 @@ export class CommitsComponent implements OnInit {
 
   ngOnInit(): void {
     this.$apiService.getData().subscribe((res) => {
-      this.data = res;
+      this.data = res || [];
       console.log('github', res);
-
-      res.forEach((el: any) => {
-        console.log('MSG: ', el.commit.message);
-      });
     });
   }
 }
