@@ -1,7 +1,8 @@
 body {
-  margin: var(--margin-site);
+  margin: 40px;
   color: var(--font-color-main);
-  font-family: "IBM Plex Sans", sans-serif;
+  //font-family: "IBM Plex Sans", sans-serif;
+  font-family: var(--font-sans);
   background-color: #fff;
 }
 
@@ -11,7 +12,14 @@ body {
   --background-color-slider: #eee;
   --background-color-site: #eee;
   --font-color-main: #262626;
+  --font-serif: 'Brygada 1918', serif;
+  --font-sans: 'Inter', sans-serif;
+
 
   // --margin-site: 0 3vw;
   --border-site: #999 1px solid;
+}
+
+li {
+  list-style-type: none;
 }
