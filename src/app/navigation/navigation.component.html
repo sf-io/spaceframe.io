@@ -1,1 +1,35 @@
-<p>navigation works!</p>
+<div id="header_wrapper">
+  <span class="logo">SpaceFrame</span>
+  <span class="main_nav_item">Info</span>
+  <span class="main_nav_item"></span>
+
+  <span class="main_nav_item main_nav_icons">
+    <img style="margin-top: 3px" src="assets/icons/code-branch-solid.svg" height="18" alt="code branch icon">
+    <img src="assets/icons/github.svg" height="22" alt="github icon">
+  </span>
+
+
+</div>
+
+<div id="navigation_wrapper">
+  <span class="intro_text_wrapper">
+    <span class="intro_text">
+Digital playground of spaceframe, a frontend engineer & creative technologist from Germany,
+    who builds digital product experiences across web apps, interfaces and 3D.
+      </span>
+  </span>
+  <span class="nav_item">
+      <li class="nav_title">Projects</li>
+    <li *ngFor="let item of projects; let i = index">{{ item }}</li>
+  </span>
+
+  <span class="nav_item">
+          <li class="nav_title">Stack</li>
+        <li *ngFor="let item of stack; let i = index">{{ item }}</li>
+  </span>
+
+  <span class="nav_item">
+          <li class="nav_title">Areas</li>
+        <li *ngFor="let item of areas; let i = index">{{ item }}</li>
+  </span>
+</div>
