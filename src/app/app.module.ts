@@ -7,6 +7,7 @@ import {StackComponent} from './stack/stack.component';
 import {FilenameToImageAltPipe} from './filename-to-image-alt.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {CommitsComponent} from './commits/commits.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {CommitsComponent} from './commits/commits.component';
     StackComponent,
     FilenameToImageAltPipe,
     CommitsComponent,
+    NavigationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],
   providers: [],
