@@ -2,6 +2,8 @@
     <div>{{ this.data.length }}</div>
 
     <li *ngFor="let msg of this.data; let i = index">
-        {{ i }} {{ msg.commit.message }}
+
+        {{ i }} | {{ msg.author.login }}
+        <a [href]="msg.html_url" target="_blank">{{ msg.commit.message }}</a>
     </li>
 </div>
