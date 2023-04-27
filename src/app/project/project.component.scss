@@ -1,0 +1,49 @@
+#project_intro {
+  display: flex;
+  margin: 50px 0;
+
+
+  .title {
+    flex: 2 1 0;
+    //font-family: var(--font-sans);
+    font-family: var(--font-serif);
+
+    font-size: 60px;
+    font-weight: 500;
+  }
+
+  .text_wrapper {
+    flex: 2 1 0;
+  }
+
+  .text {
+    column-count: 2;
+    column-gap: 40px;
+  }
+
+  .info_wrapper {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .info {
+    flex: 1 1 0;
+  }
+
+  .info_headline {
+    text-decoration: underline;
+    margin-top: 24px;
+    line-height: 30px;
+  }
+}
+
+
+.stack_tag {
+  margin: 2px;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 5px 10px;
+}

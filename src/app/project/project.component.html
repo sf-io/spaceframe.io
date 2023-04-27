@@ -1,1 +1,36 @@
-<p>project works!</p>
+<div *ngFor="let project of projects; let i = index">
+  <div id="project_intro">
+    <div class="title">
+      {{ project.title }}
+    </div>
+    <div class="text_wrapper">
+      <div class="text">
+        {{ project.text }}
+      </div>
+      <div class="info_wrapper">
+        <div class="info">
+          <div class="info_headline">YEAR</div>
+          {{ project.year }}
+
+          <div class="info_headline">CLIENT</div>
+          {{ project.client }}
+        </div>
+
+        <div class="info">
+          <div class="info_headline">TYPE</div>
+          {{ project.type }}
+
+          <div class="info_headline">STACK</div>
+          <li class="stack_tag" *ngFor="let technology of project.stack">
+            {{ technology}}
+          </li>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="project_images">
+    images
+  </div>
+</div>
