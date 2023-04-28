@@ -1,3 +1,30 @@
+img {
+  object-fit: cover;
+}
+
+.scale_a,
+.scale_b {
+  padding: 10px;
+  width: 50%;
+  -webkit-transition: width 0.6s ease-in-out;
+}
+
+.scale_a:hover {
+  width: 80%;
+}
+
+.scale_a:hover ~ .scale_b {
+  width: 20%;
+}
+
+.scale_b:hover {
+  width: 80%;
+}
+
+.scale_a:has(~ .scale_b:hover) {
+  width: 20%;
+}
+
 #project_intro {
   display: flex;
   margin: 50px 0;
@@ -46,4 +73,9 @@
   border: 1px solid #000;
   border-radius: 20px;
   padding: 5px 10px;
+}
+
+#project_images {
+  display: flex;
+  //cursor: nesw-resize;
 }
