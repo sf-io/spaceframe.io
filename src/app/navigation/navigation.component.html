@@ -5,38 +5,41 @@
 
   <span class="main_nav_item main_nav_icons">
     <img style="margin-top: 3px" src="assets/icons/code-branch-solid.svg" height="18" alt="code branch icon">
-    <img src="assets/icons/github.svg" height="22" alt="github icon">
+  <a href="https://github.com/polychrom" target="_blank">
+    <img style="margin-left:20px" src="assets/icons/github.svg" height="22" alt="github icon">
+  </a>
   </span>
-
-
 </div>
 
 <div id="navigation_wrapper">
   <span class="intro_text_wrapper">
     <span class="intro_text">
 Digital playground of spaceframe, a frontend engineer & creative technologist from Germany,
-    who builds digital product experiences across web apps, interfaces and 3D.
+who builds digital product experiences across web apps, interfaces and 3D.
       </span>
   </span>
 
   <span class="nav_item">
-          <li class="nav_title">Areas</li>
+          <div class="nav_title">Areas</div>
         <li *ngFor="let item of areas; let i = index">{{ item }}</li>
   </span>
 
   <span class="nav_item">
-          <li class="nav_title">Stack</li>
+          <div class="nav_title">Stack</div>
         <li *ngFor="let item of stack; let i = index">{{ item }}</li>
   </span>
 
   <span class="nav_item">
-      <li class="nav_title">
-            <img src="assets/icons/code-branch-solid.svg" height="14" alt="code branch icon">
-
+      <div class="nav_title">
+        <!--
+        <img src="assets/icons/code-branch-solid.svg" height="14" alt="code branch icon">
+        -->
         Commits
-      </li>
+      </div>
     <li class="dots" *ngFor="let commit of commits.slice(0, 5); let i = index">
-    <a class="commit_link" [href]="commit.url" target="_blank">{{ i + 1 }}. {{ commit.message | truncate: 2 }}</a>
+    <a class="commit_link" [href]="commit.url" target="_blank">
+      {{ commit.message | truncate: 2 }}
+    </a>
     </li>
   </span>
 </div>
