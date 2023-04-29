@@ -18,9 +18,10 @@ Digital playground of spaceframe, a frontend engineer & creative technologist fr
     who builds digital product experiences across web apps, interfaces and 3D.
       </span>
   </span>
+
   <span class="nav_item">
-      <li class="nav_title">Projects</li>
-    <li *ngFor="let item of projects; let i = index">{{ item }}</li>
+          <li class="nav_title">Areas</li>
+        <li *ngFor="let item of areas; let i = index">{{ item }}</li>
   </span>
 
   <span class="nav_item">
@@ -29,7 +30,13 @@ Digital playground of spaceframe, a frontend engineer & creative technologist fr
   </span>
 
   <span class="nav_item">
-          <li class="nav_title">Areas</li>
-        <li *ngFor="let item of areas; let i = index">{{ item }}</li>
+      <li class="nav_title">
+            <img src="assets/icons/code-branch-solid.svg" height="14" alt="code branch icon">
+
+        Commits
+      </li>
+    <li class="dots" *ngFor="let commit of commits.slice(0, 5); let i = index">
+    <a class="commit_link" [href]="commit.url" target="_blank">{{ i + 1 }}. {{ commit.message | truncate: 2 }}</a>
+    </li>
   </span>
 </div>

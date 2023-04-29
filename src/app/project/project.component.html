@@ -31,10 +31,10 @@
   </div>
 
   <div id="project_images">
-    <div class="scale_a">
+    <div class="scale_a" [ngStyle]="{'width' : project.imageFirst ? project.imageFirst +'%' : '50%' }">
       <img src="assets/test/1.jpg" width="100%">
     </div>
-    <div class="scale_b">
+    <div class="scale_b" [ngStyle]="{'width' : project.imageFirst ?  100 - project.imageFirst +'%' : '50%' }">
       <img src="assets/test/2.jpg" width="100%">
     </div>
   </div>

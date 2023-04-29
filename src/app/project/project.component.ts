@@ -13,18 +13,4 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  scaleUp(e: any): void {
-    console.log('e', e);
-    console.log('e', e.target.parentElement.classList.add('sizer'));
-    e.target.parentElement.classList.add('sizer');
-
-    console.log('e', e.target.style.width = '100%')
-  }
-
-  resetScale(e: any): void {
-    console.log('e', e);
-    console.log('e', e.target.style.width = '50%')
-  }
-
 }

@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CommitsComponent} from './commits/commits.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ProjectComponent } from './project/project.component';
+import { TruncatePipe } from './truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProjectComponent } from './project/project.component';
     CommitsComponent,
     NavigationComponent,
     ProjectComponent,
+    TruncatePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],
   providers: [],
