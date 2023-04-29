@@ -10,6 +10,7 @@ import {CommitsComponent} from './commits/commits.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ProjectComponent } from './project/project.component';
 import { TruncatePipe } from './truncate.pipe';
+import { TeaserComponent } from './teaser/teaser.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TruncatePipe } from './truncate.pipe';
     NavigationComponent,
     ProjectComponent,
     TruncatePipe,
+    TeaserComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],
   providers: [],
