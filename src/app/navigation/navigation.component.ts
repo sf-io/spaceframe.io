@@ -7,9 +7,6 @@ import {ApiService} from "../api.service";
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
-  projects = ['Project1', 'Project2', 'Project3'];
-
   stack = ['Angular × Universal', 'Vue × Nuxt', 'TypeScript', 'JavaScript', '(S)CSS', 'Figma', 'Adobe Cloud', 'Cinema4D'];
 
   expertise = ['Frontend Engineering', 'Page Performance', 'User Interfaces', 'User Experience', '3d Rendering'];

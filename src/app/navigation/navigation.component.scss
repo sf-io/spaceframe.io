@@ -61,10 +61,10 @@
   display: flex;
 }
 
-.commit_link:link,
-.commit_link:visited {
+a:link,
+a:visited {
   text-decoration: none;
-  color: #000000;
+  color: var(--font-color-main);
 }
 
 li {
