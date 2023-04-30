@@ -21,10 +21,11 @@
           {{ project.type }}
 
           <div class="info_headline">STACK</div>
-          <li class="stack_tag" *ngFor="let technology of project.stack">
-            {{ technology}}
-          </li>
-
+          <ul>
+            <li class="stack_tag" *ngFor="let technology of project.stack">
+              {{ technology}}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
