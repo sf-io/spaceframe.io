@@ -23,25 +23,28 @@ who builds digital product experiences across web apps, interfaces and 3D.
 
   <span class="nav_item">
           <div class="nav_title">Expertise</div>
+    <ul>
         <li *ngFor="let item of expertise; let i = index">{{ item }}</li>
+      </ul>
   </span>
 
   <span class="nav_item">
           <div class="nav_title">Tech Stack</div>
+    <ul>
         <li *ngFor="let item of stack; let i = index">{{ item }}</li>
+      </ul>
   </span>
 
   <span class="nav_item">
       <div class="nav_title">
-        <!--
-        <img src="assets/icons/code-branch-solid.svg" height="14" alt="code branch icon">
-        -->
         Commits
       </div>
+    <ul>
     <li class="dots" *ngFor="let commit of commits.slice(0, 5); let i = index">
     <a class="commit_link" [href]="commit.url" target="_blank">
       {{ commit.message | truncate: 2 }}
     </a>
     </li>
+    </ul>
   </span>
 </div>

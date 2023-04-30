@@ -37,7 +37,7 @@
         <img src="assets/icons/maximize.svg" height="15" alt="maximize icon">
         {{ sizeA }}%
       </div>
-      <img src="assets/test/1.jpg" width="100%">
+      <img src="assets/test/1.jpg" width="100%" [alt]="project.title">
     </div>
     <div class="scale_b scale_observer"
          [ngStyle]="{'width' : project.imageFirst ?  100 - project.imageFirst +'%' : '50%' }">
@@ -45,7 +45,7 @@
         <img src="assets/icons/maximize.svg" height="15" alt="maximize icon">
         {{ sizeB }}%
       </div>
-      <img src="assets/test/2.jpg" width="100%">
+      <img src="assets/test/2.jpg" width="100%" [alt]="project.title">
     </div>
   </div>
 </div>
