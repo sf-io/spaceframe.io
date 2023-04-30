@@ -11,6 +11,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ProjectComponent } from './project/project.component';
 import { TruncatePipe } from './truncate.pipe';
 import { TeaserComponent } from './teaser/teaser.component';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TeaserComponent } from './teaser/teaser.component';
     ProjectComponent,
     TruncatePipe,
     TeaserComponent,
+    ClockComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SwiperModule],
   providers: [],

@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
   expertise = ['Frontend Engineering', 'Page Performance', 'User Interfaces', 'User Experience', '3d Rendering'];
 
   commits: any = [];
-
+  
   constructor(private $apiService: ApiService) {
     this.$apiService.getData().subscribe(response => {
       if (response.length > 0) {
