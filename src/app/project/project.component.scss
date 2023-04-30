@@ -5,8 +5,7 @@ img {
 .scale_a,
 .scale_b {
   padding: 10px;
-  //width: 50%;
-
+  position: relative;
   -webkit-transition: width 0.6s ease-in-out;
 }
 
@@ -24,6 +23,27 @@ img {
 
 .scale_a:has(~ .scale_b:hover) {
   width: 20% !important;
+}
+
+.scale_a:hover .scale_info,
+.scale_b:hover .scale_info {
+  display: block;
+}
+
+.scale_info {
+  display: none;
+  background-color: #FFF;
+  border-radius: 20px;
+  padding: 10px 20px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  color: #000;
+  z-index: 999;
+
+  img {
+    padding-right: 10px;
+  }
 }
 
 #project_intro {
