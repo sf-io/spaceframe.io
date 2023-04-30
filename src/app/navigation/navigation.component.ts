@@ -10,9 +10,9 @@ export class NavigationComponent implements OnInit {
 
   projects = ['Project1', 'Project2', 'Project3'];
 
-  stack = ['Angular', 'Vue', 'Typescript', 'CSS'];
+  stack = ['Angular × Universal', 'Vue × Nuxt', 'TypeScript', 'JavaScript', '(S)CSS', 'Figma', 'Adobe Cloud', 'Cinema4D'];
 
-  areas = ['Frontend', 'User Interface', 'User Experience', '3d', 'Rendering'];
+  expertise = ['Frontend Engineering', 'Page Performance', 'User Interfaces', 'User Experience', '3d Rendering'];
 
   commits: any = [];
 
