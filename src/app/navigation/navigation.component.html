@@ -1,23 +1,25 @@
 <div id="header_wrapper">
   <span class="logo" (mouseenter)="typeEffect()">{{ logoEffect }}</span>
-  <span class="main_nav_item">Info</span>
-  <span class="main_nav_item"><app-clock></app-clock></span>
+  <div class="main_nav_item"><span class="btn">Info</span></div>
+  <div class="main_nav_item">
+    <span class="btn">
+    <app-clock></app-clock>
+      </span>
+  </div>
 
-  <span class="main_nav_item main_nav_icons">
-    <!--
-    <img style="margin-top: 3px" src="assets/icons/code-branch-solid.svg" height="18" alt="code branch icon">
-    -->
-  <a href="https://github.com/polychrom" target="_blank">
-    <img src="assets/icons/github.svg" height="22" alt="github icon">
-  </a>
-  </span>
+  <div class="main_nav_item">
+   <span class="btn_round">
+    <a href="https://github.com/polychrom" target="_blank">
+      <img src="assets/icons/github.svg" height="22" alt="github icon">
+    </a>
+     </span>
+  </div>
 </div>
 
 <div id="navigation_wrapper">
   <span class="intro_text_wrapper">
     <span class="intro_text">
-Digital playground of spaceframe, a frontend engineer & creative technologist from Germany,
-who builds digital product experiences across web apps, interfaces and 3D.
+      {{ intro }}
       </span>
   </span>
 
@@ -40,7 +42,7 @@ who builds digital product experiences across web apps, interfaces and 3D.
         Commits
       </div>
     <ul>
-    <li class="dots" *ngFor="let commit of commits.slice(0, 5); let i = index">
+      <li class="dots" *ngFor="let commit of commits.slice(0, 5); let i = index">
     <a class="commit_link" [href]="commit.url" target="_blank">
       {{ commit.message | truncate: 2 }}
     </a>

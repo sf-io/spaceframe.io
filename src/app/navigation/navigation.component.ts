@@ -16,6 +16,8 @@ export class NavigationComponent implements OnInit {
   readonly logoTitle = 'spaceframe';
   logoEffect = '';
 
+  intro = 'Digital playground of spaceframe, a frontend engineer & creative technologist from Germany, who builds digital product experiences across web apps, interfaces and 3D.'
+
   counter = 0;
   intervalID: any;
   charArr: string[] = [];

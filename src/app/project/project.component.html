@@ -39,9 +39,10 @@
         {{ sizeA }}%
       </div>
       <img src="assets/test/1.jpg" width="100%" [alt]="project.title">
+      <div>bildquelle 1</div>
     </div>
     <div class="scale_b scale_observer"
-         [ngStyle]="{'width' : project.imageFirst ?  100 - project.imageFirst +'%' : '50%' }">
+         [ngStyle]="{'width' : project.imageFirst ?  (100 - project.imageFirst) +'%' : '50%' }">
       <div class="scale_info">
         <img src="assets/icons/maximize.svg" height="15" alt="maximize icon">
         {{ sizeB }}%

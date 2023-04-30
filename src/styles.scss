@@ -1,8 +1,9 @@
 body {
   margin: 40px;
   color: var(--font-color-main);
-  font-family: var(--font-sans);
-  background-color: var(--color-white);
+  font-family: var(--font-space);
+  background-color: #f9f7ef; // var(--color-white);
+  font-size: 16px;
 }
 
 /* GLOBAL VARIABLES */
@@ -14,6 +15,8 @@ body {
   --color-darkest: #000000;
   --font-serif: 'Brygada 1918', serif;
   --font-sans: 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+
   --border-site: #999 1px solid;
 }
 

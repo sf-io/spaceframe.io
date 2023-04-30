@@ -53,7 +53,6 @@ img {
 
   .title {
     flex: 2 1 0;
-    font-family: var(--font-sans);
     font-size: 40px;
     font-weight: 400;
   }
@@ -63,6 +62,7 @@ img {
   }
 
   .text {
+    font-size: 18px;
     column-count: 2;
     column-gap: 40px;
   }
@@ -87,11 +87,13 @@ img {
 
 
 .stack_tag {
-  margin: 2px;
+  margin: 2px 4px 0 0;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   display: inline-block;
-  border: 1px solid #000;
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 6px 12px;
+
 }
 
 #project_images {
