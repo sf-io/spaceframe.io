@@ -3,16 +3,16 @@
   <div class="main_nav_item"><span class="btn">Info</span></div>
   <div class="main_nav_item">
     <span class="btn">
-    <app-clock></app-clock>
-      </span>
+      <app-clock></app-clock>
+    </span>
   </div>
 
   <div class="main_nav_item">
-   <span class="btn_round">
-    <a href="https://github.com/polychrom" target="_blank">
-      <img src="assets/icons/github.svg" height="22" alt="github icon">
-    </a>
-     </span>
+    <span class="btn_round">
+      <a href="https://github.com/polychrom" target="_blank">
+        <img src="assets/icons/github.svg" height="22" alt="github icon">
+      </a>
+    </span>
   </div>
 </div>
 
@@ -20,33 +20,33 @@
   <span class="intro_text_wrapper">
     <span class="intro_text">
       {{ intro }}
-      </span>
+    </span>
   </span>
 
   <span class="nav_item">
-          <div class="nav_title">Expertise</div>
+    <div class="nav_title">Expertise</div>
     <ul>
-        <li *ngFor="let item of expertise; let i = index">{{ item }}</li>
-      </ul>
+      <li *ngFor="let item of expertise; let i = index">{{ item }}</li>
+    </ul>
   </span>
 
   <span class="nav_item">
-          <div class="nav_title">Tech Stack</div>
+    <div class="nav_title">Tech Stack</div>
     <ul>
-        <li *ngFor="let item of stack; let i = index">{{ item }}</li>
-      </ul>
+      <li *ngFor="let item of stack; let i = index">{{ item }}</li>
+    </ul>
   </span>
 
   <span class="nav_item">
-      <div class="nav_title">
-        Commits
-      </div>
+    <div class="nav_title">
+      Commits
+    </div>
     <ul>
       <li class="dots" *ngFor="let commit of commits.slice(0, 5); let i = index">
-    <a class="commit_link" [href]="commit.url" target="_blank">
-      {{ commit.message | truncate: 2 }}
-    </a>
-    </li>
+        <a class="commit_link" [href]="commit.url" target="_blank">
+          {{ commit.message | truncate: 2 }}
+        </a>
+      </li>
     </ul>
   </span>
 </div>
