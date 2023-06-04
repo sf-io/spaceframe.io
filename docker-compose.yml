@@ -9,6 +9,7 @@ services:
       - 8017
     volumes:
       - ./dist/spaceframe.io:/usr/share/nginx/html
+      - ./storybook-static:/usr/share/nginx/html
 
     labels:
       - "traefik.enable=true"
@@ -22,7 +23,6 @@ services:
       - "traefik.http.middlewares.test-compress.compress=true"
 
       - "traefik.http.middlewares.testheader.headers.accesscontrolmaxage=2628000"
-
 
       #- "traefik.http.middlewares.testHeader.headers.customrequestheaders.Cache-Control=no-cache"
       #- "traefik.http.middlewares.testHeader.headers.customrequestheaders.Pragma=no-cache"
