@@ -9,7 +9,7 @@ services:
       - 8017
     volumes:
       - ./dist/spaceframe.io:/usr/share/nginx/html
-      - ./storybook-static:/usr/share/nginx/html
+      - ./storybook-static:/usr/share/nginx/html/storybook
 
     labels:
       - "traefik.enable=true"
