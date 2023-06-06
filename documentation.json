@@ -1632,6 +1632,16 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
+                "name": "FirstStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/teaser/Teaser.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    //👇 The args you need here will depend on your component\r\n  },\r\n}"
+            },
+            {
                 "name": "IS_NAVIGATION_OPEN",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1722,6 +1732,26 @@
                 "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/commits/Commits.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CommitsComponent>",
+                "defaultValue": "{\r\n  title: 'Commits',\r\n  component: CommitsComponent,\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/teaser/Teaser.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TeaserComponent>",
+                "defaultValue": "{\r\n  title: 'Teaser',\r\n  component: TeaserComponent,\r\n}"
+            },
+            {
                 "name": "NEXT_SLIDE",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1792,6 +1822,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
+                "name": "SecondStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/commits/Commits.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    //👇 The args you need here will depend on your component\r\n  },\r\n}"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1810,6 +1850,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "new Subject()"
+            },
+            {
+                "name": "WithHttp",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/commits/Commits.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn",
+                "defaultValue": "() => ({\r\n  template: `<app-root></app-root>`,\r\n  moduleMetadata: {\r\n    imports: [HttpClientModule],\r\n    declarations: [AppComponent],\r\n  },\r\n})"
             }
         ],
         "functions": [],
@@ -1842,6 +1892,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Page>",
                 "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CommitsComponent>",
+                "file": "src/app/commits/Commits.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TeaserComponent>",
+                "file": "src/app/teaser/Teaser.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1988,6 +2060,28 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
+            "src/app/teaser/Teaser.stories.ts": [
+                {
+                    "name": "FirstStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/teaser/Teaser.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    //👇 The args you need here will depend on your component\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/teaser/Teaser.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TeaserComponent>",
+                    "defaultValue": "{\r\n  title: 'Teaser',\r\n  component: TeaserComponent,\r\n}"
+                }
+            ],
             "src/stories/Button.stories.ts": [
                 {
                     "name": "Large",
@@ -2104,6 +2198,38 @@
                     "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
+            "src/app/commits/Commits.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/commits/Commits.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CommitsComponent>",
+                    "defaultValue": "{\r\n  title: 'Commits',\r\n  component: CommitsComponent,\r\n}"
+                },
+                {
+                    "name": "SecondStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/commits/Commits.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    //👇 The args you need here will depend on your component\r\n  },\r\n}"
+                },
+                {
+                    "name": "WithHttp",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/commits/Commits.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn",
+                    "defaultValue": "() => ({\r\n  template: `<app-root></app-root>`,\r\n  moduleMetadata: {\r\n    imports: [HttpClientModule],\r\n    declarations: [AppComponent],\r\n  },\r\n})"
+                }
+            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -2158,6 +2284,32 @@
                     "description": "",
                     "kind": 180
                 }
+            ],
+            "src/app/commits/Commits.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CommitsComponent>",
+                    "file": "src/app/commits/Commits.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "src/app/teaser/Teaser.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TeaserComponent>",
+                    "file": "src/app/teaser/Teaser.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
             ]
         }
     },
@@ -2185,7 +2337,7 @@
         ]
     },
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -2223,6 +2375,36 @@
                 "name": "ClockComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/commits/Commits.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/commits/Commits.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecondStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/commits/Commits.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithHttp",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -2387,6 +2569,26 @@
                 "name": "StackComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/teaser/Teaser.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FirstStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/teaser/Teaser.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
