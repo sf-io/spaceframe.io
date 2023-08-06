@@ -1850,16 +1850,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "new Subject()"
-            },
-            {
-                "name": "WithHttp",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/commits/Commits.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn",
-                "defaultValue": "() => ({\r\n  template: `<app-root></app-root>`,\r\n  moduleMetadata: {\r\n    imports: [HttpClientModule],\r\n    declarations: [AppComponent],\r\n  },\r\n})"
             }
         ],
         "functions": [],
@@ -2218,16 +2208,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    //👇 The args you need here will depend on your component\r\n  },\r\n}"
-                },
-                {
-                    "name": "WithHttp",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/commits/Commits.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryFn",
-                    "defaultValue": "() => ({\r\n  template: `<app-root></app-root>`,\r\n  moduleMetadata: {\r\n    imports: [HttpClientModule],\r\n    declarations: [AppComponent],\r\n  },\r\n})"
                 }
             ],
             ".storybook/preview.ts": [
@@ -2393,16 +2373,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SecondStory",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/commits/Commits.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "WithHttp",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
