@@ -2,7 +2,7 @@ body {
   margin: 40px;
   color: var(--font-color-main);
   font-family: var(--font-space);
-  background-color: #f9f7ef; // var(--color-white);
+  background-color: var(--color-white);
   font-size: 16px;
 }
 
@@ -13,7 +13,7 @@ body {
   --color-primary: #FF5050;
   --color-white: #FFFFFF;
   --color-darkest: #000000;
-  --font-serif: 'Brygada 1918', serif;
+  //--font-serif: 'Brygada 1918', serif;
   --font-sans: 'Inter', sans-serif;
   --font-space: 'Space Grotesk', sans-serif;
 

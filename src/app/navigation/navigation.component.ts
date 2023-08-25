@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-navigation',
@@ -31,7 +31,7 @@ export class NavigationComponent implements OnInit {
 
   commits: any = [];
 
-  readonly logoTitle = 'spaceframe';
+  readonly logoTitle = 'SpaceFrame';
   logoEffect = '';
 
   intro =
