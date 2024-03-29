@@ -1,12 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CommitsComponent} from './commits/commits.component';
-import {StackComponent} from './stack/stack.component';
 
-const routes: Routes = [
-  {path: 'commits', component: CommitsComponent},
-  {path: 'stack', component: StackComponent},
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
