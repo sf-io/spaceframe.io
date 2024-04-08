@@ -1,29 +1,11 @@
 body {
-  margin: 40px;
-  color: var(--font-color-main);
   font-family: var(--font-space);
-  background-color: var(--color-white);
-  font-size: 16px;
+  margin: 0;
+  overflow: hidden;
+
 }
 
 /* GLOBAL VARIABLES */
 :root {
-  --background-color: #d0d0d0;
-  --font-color-main: #333333;
-  --color-primary: #FF5050;
-  --color-white: #FFFFFF;
-  --color-darkest: #000000;
-  //--font-serif: 'Brygada 1918', serif;
-  --font-sans: 'Inter', sans-serif;
   --font-space: 'Space Grotesk', sans-serif;
-
-  --border-site: #999 1px solid;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
 }
